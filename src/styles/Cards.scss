@@ -1,0 +1,30 @@
+.cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  .card-lists {
+    display: flex;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    width: 22%;
+    box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+    border-radius: 8px;
+    .info-and-number {
+      margin-left: 24px;
+      p:first-child {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+        text-align: left;
+      }
+      p:last-child {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: #336cfb;
+      }
+    }
+  }
+}
