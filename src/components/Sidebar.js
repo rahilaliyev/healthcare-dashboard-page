@@ -47,11 +47,9 @@ const Sidebar = () => {
         <p>MEDICINE</p>
         <ul>
           {SidebarLists.map((item, key) => (
-            <li>
-              <img src={item.image} alt="" key={key} />
-              <a href="/" key={key}>
-                {item.list}
-              </a>
+            <li key={key}>
+              <img src={item.image} alt="" />
+              <a href="/">{item.list}</a>
             </li>
           ))}
         </ul>
