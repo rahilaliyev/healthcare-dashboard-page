@@ -55,10 +55,10 @@ const Chart = () => {
       },
       chart: {
         width: "100%",
-        zoom: {
-          enabled: false,
-        },
         background: "#fff",
+        toolbar: {
+          show: false,
+        },
       },
 
       dataLabels: {
@@ -72,19 +72,38 @@ const Chart = () => {
         show: true,
         dashArray: 0,
       },
+
       fill: {
-        type: "solid",
+        type: ["solid", "gradient"],
         opacity: [1, 0.5],
+        gradient: {
+          inverseColors: false,
+          shade: "light",
+          type: "vertical",
+          opacityFrom: 0.4,
+          opacityTo: 0.7,
+          stops: [0, 100, 100, 100],
+        },
       },
 
       tooltip: {
         enabled: true,
+        shared: true,
         style: {
           fontSize: "16px",
           fontFamily: "Lato",
         },
-        x: {
-          show: false,
+        y: {
+          show: true,
+        },
+        custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+          return (
+            '<div class="arrow_box">' +
+            "<span>" +
+            series[seriesIndex][dataPointIndex] +
+            "</span>" +
+            "</div>"
+          );
         },
       },
 
@@ -111,6 +130,38 @@ const Chart = () => {
         tickAmount: 6,
         min: 0,
         max: 300,
+      },
+      legend: {
+        fontSize: "12px",
+        fontFamily: "Lato, Helvetica, Arial",
+        fontWeight: 700,
+        position: "top",
+        horizontalAlign: "right",
+        labels: {
+          colors: "#A0A4A8",
+        },
+        offsetY: -30,
+        markers: {
+          width: 20,
+          height: 2,
+        },
+        itemMargin: {
+          horizontal: 30,
+          vertical: 0,
+        },
+      },
+      title: {
+        text: "Hospital Survey ",
+        align: "left",
+        margin: 10,
+        offsetX: 40,
+        offsetY: 20,
+        style: {
+          fontSize: "20px",
+          fontWeight: 700,
+          fontFamily: "Lato",
+          color: "#25282B",
+        },
       },
     },
   });

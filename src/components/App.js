@@ -9,7 +9,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get("https://atl-project-5f0cf.web.app/getData")
+      .get("https://git.heroku.com/desolate-hamlet-85078.git/getData")
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
     dispatch(addData());

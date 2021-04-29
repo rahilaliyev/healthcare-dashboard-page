@@ -4,6 +4,6 @@ export const addData = (data) => {
   return { type: ALL_DATA, data };
 };
 
-export const changePage = (data) => {
-  return { type: CHANGE_PAGE, data };
+export const changePage = (key) => {
+  return { type: CHANGE_PAGE, key };
 };

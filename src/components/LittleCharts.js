@@ -6,8 +6,10 @@ const LittleCharts = () => {
     chart: {
       height: 380,
       type: "line",
-      zoom: {
-        enabled: false,
+      width: "100%",
+      background: "#fff",
+      toolbar: {
+        show: false,
       },
     },
     stroke: {
@@ -20,10 +22,9 @@ const LittleCharts = () => {
       },
     ],
     grid: {
-      row: {
-        colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
-        opacity: 0.5,
-      },
+      show: true,
+      borderColor: "#D7DBDE",
+      strokeDashArray: 5,
     },
     xaxis: {
       categories: [
@@ -44,6 +45,11 @@ const LittleCharts = () => {
     },
     markers: {
       size: 6,
+    },
+    title: {
+      text: "$ 100 000",
+      align: "left",
+      offsetY: 10,
     },
   });
   const [chart2] = useState({
@@ -97,13 +103,13 @@ const LittleCharts = () => {
           options={chart1}
           series={chart1.series}
           height={350}
-          width={500}
+          width={540}
         />
         <ReactApexChart
           options={chart2}
           series={chart2.series}
           height={350}
-          width={500}
+          width={540}
         />
       </div>
     </div>

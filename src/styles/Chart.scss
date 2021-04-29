@@ -1,6 +1,45 @@
 .apexcharts-tooltip {
   background: #ffffff;
-  color: #336cfb;
   box-shadow: 0px 0px 8px rgba(16, 30, 115, 0.12);
 }
 
+.apexcharts-legend.apexcharts-align-right .apexcharts-legend-series,
+.apexcharts-legend.apexcharts-align-left .apexcharts-legend-serie {
+  display: flex !important;
+}
+.arrow_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  box-shadow: 0px 0px 8px rgba(16, 30, 115, 0.12);
+  width: 64px;
+  height: 32px;
+  &::after,
+  &::before {
+    top: 100%;
+    left: 50%;
+    background-color: black;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #ffffff;
+    border-width: 30px;
+    margin-left: -30px;
+  }
+  &::before {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #ffffff;
+    border-width: 36px;
+    margin-left: -36px;
+  }
+}
