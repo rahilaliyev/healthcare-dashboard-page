@@ -1,11 +1,11 @@
 .cards {
   display: flex;
   justify-content: space-between;
-  margin: 30px 0;
+  margin: 15px 0;
   .card-lists {
     display: flex;
     background-color: #ffffff;
-    justify-content: center;
+    padding-left: 24px;
     align-items: center;
     width: 22%;
     box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);

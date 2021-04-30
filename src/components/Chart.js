@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../styles/Chart.scss";
 import ReactApexChart from "react-apexcharts";
+import "../styles/Chart.scss";
 
 const Chart = () => {
   const [options] = useState({
@@ -14,13 +14,13 @@ const Chart = () => {
           125,
           100,
           160,
-          110,
+          90,
           155,
-          152,
-          121,
+          115,
+          175,
           123,
-          56,
-          85,
+          95,
+          175,
           null,
         ],
         type: "line",
@@ -32,11 +32,11 @@ const Chart = () => {
           null,
           147,
           110,
-          105,
+          135,
           205,
           125,
           109,
-          100,
+          170,
           180,
           130,
           220,
@@ -54,10 +54,26 @@ const Chart = () => {
         strokeDashArray: 5,
       },
       chart: {
-        width: "100%",
-        background: "#fff",
         toolbar: {
           show: false,
+        },
+        fontFamily: "Lato, Helvetica, sans-serif",
+        foreColor: "#CACCCF",
+        zoom: {
+          enabled: true,
+          type: "x",
+          autoScaleYaxis: true,
+          zoomedArea: {
+            fill: {
+              color: "#90CAF9",
+              opacity: 0.4,
+            },
+            stroke: {
+              color: "#0D47A1",
+              opacity: 0.4,
+              width: 1,
+            },
+          },
         },
       },
 
@@ -68,7 +84,7 @@ const Chart = () => {
       colors: ["#EFAD0A", "#336CFB"],
       stroke: {
         curve: "smooth",
-        width: [4, 2],
+        width: 2,
         show: true,
         dashArray: 0,
       },
@@ -125,6 +141,24 @@ const Chart = () => {
           "2020-12",
           "",
         ],
+        tooltip: {
+          enabled: false,
+        },
+        crosshairs: {
+          show: true,
+          width: 1,
+          opacity: 0.5,
+          stroke: {
+            color: "#A9C1FD",
+            width: 1,
+            dashArray: 5,
+          },
+        },
+        axisBorder: {
+          show: true,
+          height: 2,
+          offsetY: -1, 
+        },
       },
       yaxis: {
         tickAmount: 6,
@@ -154,7 +188,7 @@ const Chart = () => {
         text: "Hospital Survey ",
         align: "left",
         margin: 10,
-        offsetX: 40,
+        offsetX: 10,
         offsetY: 20,
         style: {
           fontSize: "20px",
@@ -166,12 +200,13 @@ const Chart = () => {
     },
   });
   return (
-    <div>
-      <div id="chart">
+    <div className="big-chart">
+      <div>
         <ReactApexChart
           options={options.options}
           series={options.series}
           height={350}
+      
         />
       </div>
     </div>
