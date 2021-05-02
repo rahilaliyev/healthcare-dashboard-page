@@ -1,24 +1,27 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/App.scss";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
-import { addData } from "../redux/actions/actions";
-import { useDispatch } from "react-redux";
-import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    axios
-      .get("https://desolate-hamlet-85078.herokuapp.com/getData")
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
-    dispatch(addData());
-  });
   return (
-    <div className="App">
-      <Sidebar />
-      <Main />
-    </div>
+    <Router>
+      <div className="App">
+        <Sidebar />
+        <Switch>
+          <Redirect exact from="/" to="/dashboard" />
+          <Route path="/dashboard">
+            <Main />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 

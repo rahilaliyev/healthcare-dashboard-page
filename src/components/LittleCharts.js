@@ -4,9 +4,7 @@ import "../styles/LittleCharts.scss";
 const LittleCharts = () => {
   const [chart1] = useState({
     chart: {
-      height: 380,
       type: "line",
-      width: "100%",
       background: "#fff",
       toolbar: {
         show: false,
@@ -75,6 +73,16 @@ const LittleCharts = () => {
         height: 2,
         offsetY: -1,
       },
+      crosshairs: {
+        show: true,
+        width: 1,
+        opacity: 0.5,
+        stroke: {
+          color: "#A9C1FD",
+          width: 1,
+          dashArray: 5,
+        },
+      },
     },
     yaxis: {
       tickAmount: 5,
@@ -86,10 +94,7 @@ const LittleCharts = () => {
         },
       },
     },
-    tooltip: {
-      intersect: true,
-      shared: false,
-    },
+
     markers: {
       size: 4,
       colors: "#A9C1FD",
@@ -129,7 +134,7 @@ const LittleCharts = () => {
     chart: {
       height: 380,
       type: "line",
-      width: "100%",
+
       background: "#fff",
       toolbar: {
         show: false,
@@ -191,7 +196,6 @@ const LittleCharts = () => {
     },
 
     xaxis: {
-
       type: "datetime",
       labels: {
         format: "d MMMM",
@@ -203,7 +207,6 @@ const LittleCharts = () => {
         show: true,
         height: 2,
         offsetY: -1,
-
       },
     },
     yaxis: {
@@ -262,16 +265,14 @@ const LittleCharts = () => {
           <ReactApexChart
             options={chart1}
             series={chart1.series}
-            height={350}
-            width={550}
+            style={{ width: "80%", height: "350px" }}
           />
         </div>
         <div className="little-chart">
           <ReactApexChart
             options={chart2}
             series={chart2.series}
-            height={350}
-            width={550}
+            style={{ width: "80%", height: "350px" }}
           />
         </div>
       </div>

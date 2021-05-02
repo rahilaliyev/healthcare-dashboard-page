@@ -3,6 +3,7 @@ import Logo from "../assets/logo.png";
 import "../styles/Sidebar.scss";
 import { changePage } from "../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -143,13 +144,13 @@ const Sidebar = () => {
             <li onClick={() => changeClickList(key)} key={key}>
               {item.image(key)}
 
-              <a
+              <NavLink
+                to={key === 0 ? "/dashboard" : "/appointments"}
                 key={key}
                 style={key === keylist.key ? { color: "#336CFB" } : {}}
-                href="/"
               >
                 {item.list}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
