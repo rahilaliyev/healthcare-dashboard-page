@@ -1,5 +1,5 @@
 .Sidebar {
-  width: 30vh;
+  width: 20%;
   height: 100vh;
   background-color: #ffffff;
   box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
@@ -7,21 +7,26 @@
   top: 0;
   .logo {
     padding: 24px;
+    img {
+      &:last-child {
+        display: none;
+      }
+    }
   }
   p {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #a0a4a8;
-    padding: 14px 0;
+    padding: 14px 24px;
   }
 
   li {
-    padding: 14px 0;
+    padding: 14px 24px;
     &:hover {
       svg {
         path {
-          fill: #336cfb;
+          fill: #558eff;
         }
       }
     }
@@ -35,6 +40,9 @@
       line-height: 20px;
       color: #52575c;
       margin-left: 20px;
+      &:hover {
+        color: #558eff;
+      }
     }
     &:last-child {
       border-top: 1px solid #e8e8e8;

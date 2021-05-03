@@ -3,6 +3,7 @@ import "../styles/App.scss";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
 import Appointment from "./Appointment";
+import "../styles/Responsive.scss";
 import {
   BrowserRouter as Router,
   Redirect,

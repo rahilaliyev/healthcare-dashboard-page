@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from "react";
+import React, { useMemo } from "react";
 import { useTable } from "react-table";
 import PenVector from "../assets/Pen-vector.png";
 import DeleteVector from "../assets/Delete-vector.png";
@@ -104,7 +104,7 @@ const Appointment = (props) => {
       {
         col1: [
           <img src={props.data.data.List5[6]} alt="avatar5" />,
-          props.data.data.List5[0],
+          props.data.data.List10[0],
         ],
         col2: props.data.data.List5[1],
         col3: props.data.data.List5[2],

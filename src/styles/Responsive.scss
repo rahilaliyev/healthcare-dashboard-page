@@ -1,0 +1,47 @@
+@media only screen and (max-width: 1024px) {
+  .Sidebar {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      img {
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          display: block;
+        }
+      }
+    }
+    p,
+    a {
+      display: none;
+    }
+  }
+  .search-and-notification {
+    .search {
+      width: 85%;
+    }
+    .notification-profile {
+      width: 20%;
+    }
+  }
+  .cards {
+    .card-lists {
+      .info-and-number {
+        margin-left: 10px;
+      }
+    }
+  }
+  .little-charts-container {
+    flex-direction: column;
+    .little-chart {
+      width: 100%;
+    }
+  }
+  .table {
+    display: none;
+  }
+}

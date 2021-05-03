@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../assets/logo.png";
+import LittleLogo from "../assets/logo-image.png";
 import "../styles/Sidebar.scss";
 import { changePage } from "../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
@@ -138,23 +139,24 @@ const Sidebar = () => {
     <div className="Sidebar">
       <div className="logo">
         <img src={Logo} alt="Logo" />
-        <p>MEDICINE</p>
-        <ul>
-          {SidebarLists.map((item, key) => (
-            <li onClick={() => changeClickList(key)} key={key}>
-              {item.image(key)}
-
-              <NavLink
-                to={key === 0 ? "/dashboard" : "/appointments"}
-                key={key}
-                style={key === keylist.key ? { color: "#336CFB" } : {}}
-              >
-                {item.list}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+        <img src={LittleLogo} alt="Logo" />
       </div>
+      <p>MEDICINE</p>
+      <ul>
+        {SidebarLists.map((item, key) => (
+          <li onClick={() => changeClickList(key)} key={key}>
+            {item.image(key)}
+
+            <NavLink
+              to={key === 0 ? "/dashboard" : "/appointments"}
+              key={key}
+              style={key === keylist.key ? { color: "#336CFB" } : {}}
+            >
+              {item.list}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

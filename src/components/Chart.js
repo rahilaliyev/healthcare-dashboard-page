@@ -202,6 +202,7 @@ const Chart = () => {
           options={options.options}
           series={options.series}
           height={350}
+          width="100%"
           type="area"
         />
       </div>

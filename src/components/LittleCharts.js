@@ -265,14 +265,14 @@ const LittleCharts = () => {
           <ReactApexChart
             options={chart1}
             series={chart1.series}
-            style={{ width: "80%", height: "350px" }}
+            style={{ width: "100%", height: "350px" }}
           />
         </div>
         <div className="little-chart">
           <ReactApexChart
             options={chart2}
             series={chart2.series}
-            style={{ width: "80%", height: "350px" }}
+            style={{ width: "100%", height: "350px" }}
           />
         </div>
       </div>
