@@ -23,11 +23,10 @@ const Chart = () => {
           175,
           null,
         ],
-        type: "line",
       },
       {
         name: "Patients 2020",
-        type: "area",
+
         data: [
           null,
           147,
@@ -88,17 +87,14 @@ const Chart = () => {
         show: true,
         dashArray: 0,
       },
-
       fill: {
-        type: ["solid", "gradient"],
-        opacity: [1, 0.5],
+        type: "gradient",
         gradient: {
+          shadeIntensity: 0.2,
           inverseColors: false,
-          shade: "light",
-          type: "vertical",
-          opacityFrom: 0.4,
-          opacityTo: 0.7,
-          stops: [0, 100, 100, 100],
+          opacityFrom: [0, 0.3],
+          opacityTo: [0, 0.3],
+          stops: [0, 90, 100],
         },
       },
 
@@ -157,7 +153,7 @@ const Chart = () => {
         axisBorder: {
           show: true,
           height: 2,
-          offsetY: -1, 
+          offsetY: -1,
         },
       },
       yaxis: {
@@ -206,7 +202,7 @@ const Chart = () => {
           options={options.options}
           series={options.series}
           height={350}
-      
+          type="area"
         />
       </div>
     </div>

@@ -4,7 +4,7 @@ import "../styles/Main.scss";
 import Cards from "./Cards";
 import Chart from "./Chart";
 import LittleCharts from "./LittleCharts";
-import Appointment from "./Appointment";
+import Table from "./Table";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addData } from "../redux/actions/actions";
@@ -18,13 +18,15 @@ const Main = () => {
       .then((res) => dispatch(addData(res.data)))
       .catch((err) => console.log(err));
   }, [dispatch]);
+
+  console.log(data);
   return (
     <div className="main">
       <Search />
       <Cards />
       <Chart />
       <LittleCharts />
-      <Appointment data={data} />
+      {data ? <Table data={data} /> : ""}
     </div>
   );
 };
