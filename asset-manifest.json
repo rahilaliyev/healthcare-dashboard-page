@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/healhcare-dashboard-page/static/css/main.2798c4e6.chunk.css",
-    "main.js": "/healhcare-dashboard-page/static/js/main.51d17801.chunk.js",
-    "main.js.map": "/healhcare-dashboard-page/static/js/main.51d17801.chunk.js.map",
+    "main.css": "/healhcare-dashboard-page/static/css/main.15ae07ea.chunk.css",
+    "main.js": "/healhcare-dashboard-page/static/js/main.17fb6664.chunk.js",
+    "main.js.map": "/healhcare-dashboard-page/static/js/main.17fb6664.chunk.js.map",
     "runtime-main.js": "/healhcare-dashboard-page/static/js/runtime-main.ea63ae98.js",
     "runtime-main.js.map": "/healhcare-dashboard-page/static/js/runtime-main.ea63ae98.js.map",
-    "static/js/2.82572944.chunk.js": "/healhcare-dashboard-page/static/js/2.82572944.chunk.js",
-    "static/js/2.82572944.chunk.js.map": "/healhcare-dashboard-page/static/js/2.82572944.chunk.js.map",
+    "static/js/2.e5a7ae01.chunk.js": "/healhcare-dashboard-page/static/js/2.e5a7ae01.chunk.js",
+    "static/js/2.e5a7ae01.chunk.js.map": "/healhcare-dashboard-page/static/js/2.e5a7ae01.chunk.js.map",
     "index.html": "/healhcare-dashboard-page/index.html",
-    "static/css/main.2798c4e6.chunk.css.map": "/healhcare-dashboard-page/static/css/main.2798c4e6.chunk.css.map",
-    "static/js/2.82572944.chunk.js.LICENSE.txt": "/healhcare-dashboard-page/static/js/2.82572944.chunk.js.LICENSE.txt"
+    "static/css/main.15ae07ea.chunk.css.map": "/healhcare-dashboard-page/static/css/main.15ae07ea.chunk.css.map",
+    "static/js/2.e5a7ae01.chunk.js.LICENSE.txt": "/healhcare-dashboard-page/static/js/2.e5a7ae01.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ea63ae98.js",
-    "static/js/2.82572944.chunk.js",
-    "static/css/main.2798c4e6.chunk.css",
-    "static/js/main.51d17801.chunk.js"
+    "static/js/2.e5a7ae01.chunk.js",
+    "static/css/main.15ae07ea.chunk.css",
+    "static/js/main.17fb6664.chunk.js"
   ]
 }
