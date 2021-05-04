@@ -7,6 +7,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
+  const hideSidebar = () => {
+    document.querySelector(".Sidebar").classList.remove("active");
+  };
   const dispatch = useDispatch();
   const keylist = useSelector((state) => state.changePageReducer);
   const changeClickList = (key) => {
@@ -145,14 +148,13 @@ const Sidebar = () => {
       <ul>
         {SidebarLists.map((item, key) => (
           <li onClick={() => changeClickList(key)} key={key}>
-            {item.image(key)}
-
             <NavLink
+              onClick={hideSidebar}
               to={key === 0 ? "/dashboard" : "/appointments"}
               key={key}
               style={key === keylist.key ? { color: "#336CFB" } : {}}
             >
-              {item.list}
+              {item.image(key)} <span>{item.list} </span>
             </NavLink>
           </li>
         ))}

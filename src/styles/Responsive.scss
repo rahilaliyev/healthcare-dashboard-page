@@ -1,3 +1,112 @@
+@media only screen and (max-width: 450px) {
+  body {
+    .main {
+      .cards {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        .card-lists {
+          width: 100%;
+        }
+      }
+      .search-and-notification {
+        background: #ffffff;
+        box-shadow: 0px 4px 16px rgba(16, 30, 115, 0.08);
+        .notification-profile {
+          width: 25%;
+        }
+        .hamburger-menu {
+          display: flex;
+          flex-direction: column;
+          margin-left: 16px;
+        }
+        .hamburger-rotate {
+          .hamburger-line:first-child {
+            transition: 0.5s;
+            transform: rotate(-45deg) translate(-2px, 2px);
+          }
+
+          .hamburger-line:nth-child(2) {
+            opacity: 0;
+          }
+
+          .hamburger-line:last-child {
+            transition: 0.5s;
+            transform: rotate(45deg) translate(-8px, -10px);
+          }
+        }
+        .search {
+          display: none;
+        }
+      }
+    }
+    .Sidebar.active {
+      left: 0;
+      width: 100%;
+      height: 50vh;
+      z-index: 1111;
+    }
+    .Sidebar {
+      transition: 1s;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      .logo {
+        img {
+          &:first-child {
+            display: block;
+          }
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+      li {
+        padding: 5px;
+        a {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+    .appointment {
+      .search-and-notification {
+        background: #ffffff;
+        box-shadow: 0px 4px 16px rgba(16, 30, 115, 0.08);
+        .notification-profile {
+          width: 25%;
+        }
+        .hamburger-menu {
+          display: flex;
+          flex-direction: column;
+          margin-left: 16px;
+        }
+        .hamburger-rotate {
+          .hamburger-line:first-child {
+            transition: 0.5s;
+            transform: rotate(-45deg) translate(-2px, 2px);
+          }
+
+          .hamburger-line:nth-child(2) {
+            opacity: 0;
+          }
+
+          .hamburger-line:last-child {
+            transition: 0.5s;
+            transform: rotate(45deg) translate(-8px, -10px);
+          }
+        }
+        .search {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   .Sidebar {
     width: 10%;
@@ -15,9 +124,16 @@
         }
       }
     }
-    p,
-    a {
+    p {
       display: none;
+    }
+    li {
+      a {
+        margin-left: 0px;
+        span {
+          display: none;
+        }
+      }
     }
   }
   .search-and-notification {
@@ -29,7 +145,13 @@
     }
   }
   .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
     .card-lists {
+      width: 95%;
+      margin: 10px 0;
       .info-and-number {
         margin-left: 10px;
       }
@@ -43,5 +165,10 @@
   }
   .table {
     display: none;
+  }
+  .table-wrapper {
+    .table {
+      display: block;
+    }
   }
 }

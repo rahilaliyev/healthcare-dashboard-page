@@ -5,6 +5,7 @@
   box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
   position: sticky;
   top: 0;
+
   .logo {
     padding: 24px;
     img {
@@ -22,7 +23,8 @@
   }
 
   li {
-    padding: 14px 24px;
+    padding: 14px 5px;
+
     &:hover {
       svg {
         path {
@@ -42,6 +44,9 @@
       margin-left: 20px;
       &:hover {
         color: #558eff;
+      }
+      span {
+        margin: 10px;
       }
     }
     &:last-child {
