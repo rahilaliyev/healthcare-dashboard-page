@@ -1,4 +1,45 @@
 .appointment {
   width: 100%;
   padding: 25px;
+  .table-wrapper {
+    .table {
+      table {
+        tbody {
+          tr:last-child {
+            td {
+              border-bottom: 1px solid #dbdde0;
+            }
+          }
+        }
+      }
+    }
+    .table-buttons {
+      padding: 24px;
+      button {
+        background: none;
+        outline: none;
+        border: 1px solid #e8e8e8;
+        border-radius: 4px;
+        width: 32px;
+        height: 32px;
+        margin: 4px;
+        &:disabled {
+          opacity: 0.7;
+        }
+        &:active,
+        &:focus {
+          background: #336cfb;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  .icon {
+    img {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      margin: 24px;
+    }
+  }
 }

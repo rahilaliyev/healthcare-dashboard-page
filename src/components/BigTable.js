@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useTable } from "react-table";
+import { useTable, usePagination } from "react-table";
 import PenVector from "../assets/Pen-vector.png";
 import DeleteVector from "../assets/Delete-vector.png";
 import "../styles/Table.scss";
@@ -178,6 +178,201 @@ const BigTable = (props) => {
       },
       {
         col1: [
+          <img src={props.data.data.List8[6]} alt="avatar8" />,
+          props.data.data.List8[0],
+        ],
+        col2: props.data.data.List8[1],
+        col3: props.data.data.List8[2],
+        col4: props.data.data.List8[3],
+        col5: props.data.data.List8[4],
+        col6: props.data.data.List8[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List9[6]} alt="avatar9" />,
+          props.data.data.List9[0],
+        ],
+        col2: props.data.data.List9[1],
+        col3: props.data.data.List9[2],
+        col4: props.data.data.List9[3],
+        col5: props.data.data.List9[4],
+        col6: props.data.data.List9[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List10[6]} alt="avatar10" />,
+          props.data.data.List10[0],
+        ],
+        col2: props.data.data.List10[1],
+        col3: props.data.data.List10[2],
+        col4: props.data.data.List10[3],
+        col5: props.data.data.List10[4],
+        col6: props.data.data.List10[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List2[6]} alt="avatar2" />,
+          props.data.data.List2[0],
+        ],
+        col2: props.data.data.List2[1],
+        col3: props.data.data.List2[2],
+        col4: props.data.data.List2[3],
+        col5: props.data.data.List2[4],
+        col6: props.data.data.List2[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List2[6]} alt="avatar2" />,
+          props.data.data.List2[0],
+        ],
+        col2: props.data.data.List2[1],
+        col3: props.data.data.List2[2],
+        col4: props.data.data.List2[3],
+        col5: props.data.data.List2[4],
+        col6: props.data.data.List2[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List3[6]} alt="avatar3" />,
+          props.data.data.List3[0],
+        ],
+        col2: props.data.data.List3[1],
+        col3: props.data.data.List3[2],
+        col4: props.data.data.List3[3],
+        col5: props.data.data.List3[4],
+        col6: props.data.data.List3[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List4[6]} alt="avatar4" />,
+          props.data.data.List4[0],
+        ],
+        col2: props.data.data.List4[1],
+        col3: props.data.data.List4[2],
+        col4: props.data.data.List4[3],
+        col5: props.data.data.List4[4],
+        col6: props.data.data.List4[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List3[6]} alt="avatar3" />,
+          props.data.data.List3[0],
+        ],
+        col2: props.data.data.List3[1],
+        col3: props.data.data.List3[2],
+        col4: props.data.data.List3[3],
+        col5: props.data.data.List3[4],
+        col6: props.data.data.List3[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List4[6]} alt="avatar4" />,
+          props.data.data.List4[0],
+        ],
+        col2: props.data.data.List4[1],
+        col3: props.data.data.List4[2],
+        col4: props.data.data.List4[3],
+        col5: props.data.data.List4[4],
+        col6: props.data.data.List4[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List10[6]} alt="avatar10" />,
+          props.data.data.List10[0],
+        ],
+        col2: props.data.data.List10[1],
+        col3: props.data.data.List10[2],
+        col4: props.data.data.List10[3],
+        col5: props.data.data.List10[4],
+        col6: props.data.data.List10[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List10[6]} alt="avatar10" />,
+          props.data.data.List10[0],
+        ],
+        col2: props.data.data.List10[1],
+        col3: props.data.data.List10[2],
+        col4: props.data.data.List10[3],
+        col5: props.data.data.List10[4],
+        col6: props.data.data.List10[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List8[6]} alt="avatar8" />,
+          props.data.data.List8[0],
+        ],
+        col2: props.data.data.List8[1],
+        col3: props.data.data.List8[2],
+        col4: props.data.data.List8[3],
+        col5: props.data.data.List8[4],
+        col6: props.data.data.List8[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
+          <img src={props.data.data.List9[6]} alt="avatar9" />,
+          props.data.data.List9[0],
+        ],
+        col2: props.data.data.List9[1],
+        col3: props.data.data.List9[2],
+        col4: props.data.data.List9[3],
+        col5: props.data.data.List9[4],
+        col6: props.data.data.List9[5],
+        col7: [
+          <img src={PenVector} alt="Pen Vector" />,
+          <img src={DeleteVector} alt="Delete Vector" />,
+        ],
+      },
+      {
+        col1: [
           <img src={props.data.data.List10[6]} alt="avatar10" />,
           props.data.data.List10[0],
         ],
@@ -199,9 +394,14 @@ const BigTable = (props) => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
+    page,
+    nextPage,
+    previousPage,
+    canPreviousPage,
+    canNextPage,
+    gotoPage,
     prepareRow,
-  } = useTable({ columns, data });
+  } = useTable({ columns, data }, usePagination);
   return (
     <div className="table-wrapper">
       <div className="table">
@@ -218,7 +418,7 @@ const BigTable = (props) => {
             ))}
           </thead>
           <tbody {...getTableBodyProps()}>
-            {rows.map((row) => {
+            {page.map((row) => {
               prepareRow(row);
               return (
                 <tr {...row.getRowProps()}>
@@ -235,9 +435,15 @@ const BigTable = (props) => {
           </tbody>
         </table>
         <div className="table-buttons">
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
+          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+            &lt;
+          </button>
+          <button onClick={() => gotoPage(0)}>1</button>
+          <button onClick={() => gotoPage(1)}>2</button>
+          <button onClick={() => gotoPage(2)}>3</button>
+          <button onClick={() => nextPage()} disabled={!canNextPage}>
+            &gt;
+          </button>
         </div>
       </div>
     </div>
