@@ -18,8 +18,6 @@ const Main = () => {
       .then((res) => dispatch(addData(res.data)))
       .catch((err) => console.log(err));
   }, [dispatch]);
-
-  console.log(data);
   return (
     <div className="main">
       <Search />

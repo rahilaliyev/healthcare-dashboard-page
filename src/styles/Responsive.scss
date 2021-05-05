@@ -42,7 +42,7 @@
     .Sidebar.active {
       left: 0;
       width: 100%;
-      height: 50vh;
+      height: 65vh;
       z-index: 1111;
     }
     .Sidebar {
@@ -164,11 +164,6 @@
     }
   }
   .table {
-    display: none;
-  }
-  .table-wrapper {
-    .table {
-      display: block;
-    }
+    display: block;
   }
 }

@@ -19,10 +19,10 @@ const Search = () => {
   return (
     <div>
       <div className="search-and-notification">
-        <div class="hamburger-menu" onClick={handleSideBar}>
-          <div class="hamburger-line"></div>
-          <div class="hamburger-line"></div>
-          <div class="hamburger-line"></div>
+        <div className="hamburger-menu" onClick={handleSideBar}>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
         </div>
         <div className="search">
           <img src={SearchIcon} alt="Logo" />
