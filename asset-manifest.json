@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/healthcare-dashboard-page/static/css/main.f83cfb91.chunk.css",
-    "main.js": "/healthcare-dashboard-page/static/js/main.e573a3df.chunk.js",
-    "main.js.map": "/healthcare-dashboard-page/static/js/main.e573a3df.chunk.js.map",
-    "runtime-main.js": "/healthcare-dashboard-page/static/js/runtime-main.b14aa9c4.js",
-    "runtime-main.js.map": "/healthcare-dashboard-page/static/js/runtime-main.b14aa9c4.js.map",
-    "static/js/2.d831b8dc.chunk.js": "/healthcare-dashboard-page/static/js/2.d831b8dc.chunk.js",
-    "static/js/2.d831b8dc.chunk.js.map": "/healthcare-dashboard-page/static/js/2.d831b8dc.chunk.js.map",
-    "index.html": "/healthcare-dashboard-page/index.html",
-    "static/css/main.f83cfb91.chunk.css.map": "/healthcare-dashboard-page/static/css/main.f83cfb91.chunk.css.map",
-    "static/js/2.d831b8dc.chunk.js.LICENSE.txt": "/healthcare-dashboard-page/static/js/2.d831b8dc.chunk.js.LICENSE.txt"
+    "main.css": "/healthcare-dashboard-page/dashboard/static/css/main.f83cfb91.chunk.css",
+    "main.js": "/healthcare-dashboard-page/dashboard/static/js/main.e573a3df.chunk.js",
+    "main.js.map": "/healthcare-dashboard-page/dashboard/static/js/main.e573a3df.chunk.js.map",
+    "runtime-main.js": "/healthcare-dashboard-page/dashboard/static/js/runtime-main.d00f47c9.js",
+    "runtime-main.js.map": "/healthcare-dashboard-page/dashboard/static/js/runtime-main.d00f47c9.js.map",
+    "static/js/2.d831b8dc.chunk.js": "/healthcare-dashboard-page/dashboard/static/js/2.d831b8dc.chunk.js",
+    "static/js/2.d831b8dc.chunk.js.map": "/healthcare-dashboard-page/dashboard/static/js/2.d831b8dc.chunk.js.map",
+    "index.html": "/healthcare-dashboard-page/dashboard/index.html",
+    "static/css/main.f83cfb91.chunk.css.map": "/healthcare-dashboard-page/dashboard/static/css/main.f83cfb91.chunk.css.map",
+    "static/js/2.d831b8dc.chunk.js.LICENSE.txt": "/healthcare-dashboard-page/dashboard/static/js/2.d831b8dc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b14aa9c4.js",
+    "static/js/runtime-main.d00f47c9.js",
     "static/js/2.d831b8dc.chunk.js",
     "static/css/main.f83cfb91.chunk.css",
     "static/js/main.e573a3df.chunk.js"
