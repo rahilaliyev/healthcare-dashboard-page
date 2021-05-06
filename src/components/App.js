@@ -26,10 +26,7 @@ const App = () => {
           <Route path="/appointments">
             <Appointment data={data.data} />
           </Route>
-          <Redirect
-            push
-            to={keylist.key === 0 ? "/dashboard" : "/appointments"}
-          />
+          <Redirect to={keylist.key === 0 ? "/dashboard" : "/appointments"} />
         </Switch>
       </div>
     </Router>
