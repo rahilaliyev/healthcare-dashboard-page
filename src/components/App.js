@@ -5,7 +5,7 @@ import Main from "./Main";
 import Appointment from "./Appointment";
 import "../styles/Responsive.scss";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Redirect,
   Switch,
   Route,
