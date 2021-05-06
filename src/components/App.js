@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 
 const App = () => {
   const data = useSelector((state) => state.allDataReducer);
+  const keylist = useSelector((state) => state.changePageReducer);
   return (
     <Router>
       <div className="App">
@@ -25,7 +26,10 @@ const App = () => {
           <Route path="/appointments">
             <Appointment data={data.data} />
           </Route>
-          <Redirect push to="/dashboard" />
+          <Redirect
+            push
+            to={keylist.key === 0 ? "/dashboard" : "/appointments"}
+          />
         </Switch>
       </div>
     </Router>

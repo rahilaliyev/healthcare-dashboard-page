@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const hideSidebar = () => {
-    document.querySelector(".Sidebar").classList.remove("active");
+    document.querySelector(".Sidebar").classList.toggle("active");
   };
   const dispatch = useDispatch();
   const keylist = useSelector((state) => state.changePageReducer);

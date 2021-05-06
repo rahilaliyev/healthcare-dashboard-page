@@ -6,7 +6,6 @@ import Avatar from "../assets/avatar-circle.png";
 
 const Search = () => {
   const [sidebar, setSidebar] = useState(false);
-
   const handleSideBar = () => {
     setSidebar(!sidebar);
     document.querySelector(".Sidebar").classList.toggle("active");
@@ -19,7 +18,7 @@ const Search = () => {
   return (
     <div>
       <div className="search-and-notification">
-        <div className="hamburger-menu" onClick={handleSideBar}>
+        <div class="hamburger-menu" onClick={handleSideBar}>
           <div className="hamburger-line"></div>
           <div className="hamburger-line"></div>
           <div className="hamburger-line"></div>
