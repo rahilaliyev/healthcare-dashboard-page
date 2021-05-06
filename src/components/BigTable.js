@@ -433,18 +433,18 @@ const BigTable = (props) => {
               );
             })}
           </tbody>
+          <div className="table-buttons">
+            <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+              &lt;
+            </button>
+            <button onClick={() => gotoPage(0)}>1</button>
+            <button onClick={() => gotoPage(1)}>2</button>
+            <button onClick={() => gotoPage(2)}>3</button>
+            <button onClick={() => nextPage()} disabled={!canNextPage}>
+              &gt;
+            </button>
+          </div>
         </table>
-        <div className="table-buttons">
-          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            &lt;
-          </button>
-          <button onClick={() => gotoPage(0)}>1</button>
-          <button onClick={() => gotoPage(1)}>2</button>
-          <button onClick={() => gotoPage(2)}>3</button>
-          <button onClick={() => nextPage()} disabled={!canNextPage}>
-            &gt;
-          </button>
-        </div>
       </div>
     </div>
   );

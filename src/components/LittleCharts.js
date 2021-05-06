@@ -129,10 +129,27 @@ const LittleCharts = () => {
         width: 0,
       },
     },
+    responsive: [
+      {
+        breakpoint: 350,
+        options: {
+          legend: {
+            offsetY: 10,
+            position: "bottom",
+            horizontalAlign: "center",
+          },
+          title: {
+            style: {
+              fontSize: "15px",
+            },
+          },
+          yaxis: { tickAmount: 2 },
+        },
+      },
+    ],
   });
   const [chart2] = useState({
     chart: {
-      height: 380,
       type: "line",
 
       background: "#fff",
@@ -257,6 +274,24 @@ const LittleCharts = () => {
         width: 0,
       },
     },
+    responsive: [
+      {
+        breakpoint: 350,
+        options: {
+          legend: {
+            offsetY: 10,
+            position: "bottom",
+            horizontalAlign: "center",
+          },
+          title: {
+            style: {
+              fontSize: "15px",
+            },
+          },
+          yaxis: { tickAmount: 2 },
+        },
+      },
+    ],
   });
   return (
     <div>
@@ -272,7 +307,7 @@ const LittleCharts = () => {
           <ReactApexChart
             options={chart2}
             series={chart2.series}
-            style={{ width: "100%" }}
+            style={{ width: "100%", height: "100%" }}
           />
         </div>
       </div>

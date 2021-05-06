@@ -193,6 +193,18 @@ const Chart = () => {
           color: "#25282B",
         },
       },
+      responsive: [
+        {
+          breakpoint: 550,
+          options: {
+            legend: {
+              position: "bottom",
+              horizontalAlign: "center",
+              offsetY: 5,
+            },
+          },
+        },
+      ],
     },
   });
   return (

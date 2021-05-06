@@ -1,3 +1,70 @@
+@media only screen and (max-width: 1024px) {
+  .Sidebar {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      img {
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          display: block;
+        }
+      }
+    }
+    p {
+      display: none;
+    }
+    li {
+      a {
+        margin-left: 0px;
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .main {
+    width: 90%;
+
+    .search-and-notification {
+      .search {
+        width: 85%;
+      }
+      .notification-profile {
+        width: 20%;
+      }
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      place-items: center;
+      .card-lists {
+        width: 95%;
+        margin: 10px 0;
+        .info-and-number {
+          margin-left: 10px;
+        }
+      }
+    }
+    .little-charts-container {
+      flex-direction: column;
+      .little-chart {
+        width: 100%;
+      }
+    }
+    .table {
+      overflow: scroll;
+      display: block;
+    }
+  }
+}
+
 @media only screen and (max-width: 450px) {
   body {
     .main {
@@ -112,64 +179,21 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .Sidebar {
-    width: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .logo {
-      img {
-        &:first-child {
-          display: none;
-        }
-        &:last-child {
-          display: block;
+@media only screen and (max-width: 350px) {
+  body {
+    .main {
+      .search-and-notification {
+        .notification-profile {
+          width: 50%;
         }
       }
     }
-    p {
-      display: none;
-    }
-    li {
-      a {
-        margin-left: 0px;
-        span {
-          display: none;
+    .appointment {
+      .search-and-notification {
+        .notification-profile {
+          width: 50%;
         }
       }
     }
-  }
-  .search-and-notification {
-    .search {
-      width: 85%;
-    }
-    .notification-profile {
-      width: 20%;
-    }
-  }
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    place-items: center;
-    .card-lists {
-      width: 95%;
-      margin: 10px 0;
-      .info-and-number {
-        margin-left: 10px;
-      }
-    }
-  }
-  .little-charts-container {
-    flex-direction: column;
-    .little-chart {
-      width: 100%;
-    }
-  }
-  .table {
-    overflow: scroll;
-    display: block;
   }
 }
