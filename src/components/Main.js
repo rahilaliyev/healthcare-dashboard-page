@@ -24,7 +24,7 @@ const Main = () => {
       <Cards />
       <Chart />
       <LittleCharts />
-      {data ? <Table data={data} /> : ""}
+      {data.data ? <Table data={data} /> : ""}
     </div>
   );
 };
