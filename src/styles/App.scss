@@ -4,28 +4,26 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  body {
-    background: $background;
-    margin: 0;
-    padding: 0;
-    ul {
-      list-style: none;
-      text-decoration: none;
-      margin: 0;
-      padding: 0;
-    }
-  
-    svg {
-      cursor: pointer !important;
-    }
-  
-    h2 {
-      @include fonts(700, 2.5rem, 2.875rem, 0.2px);
-    }
-    h5 {
-      @include fonts(700, 1.25rem, 1.625rem, 0.2px);
-    }
-  }
+}
+body {
+  background: $background;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
 
-  
+svg {
+  cursor: pointer !important;
+}
+
+h2 {
+  @include fonts(700, 2.5rem, 2.875rem, 0.2px);
+}
+h5 {
+  @include fonts(700, 1.25rem, 1.625rem, 0.2px);
 }
