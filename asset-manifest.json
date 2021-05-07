@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/healthcare-dashboard-page/static/css/main.dc341f9e.chunk.css",
-    "main.js": "/healthcare-dashboard-page/static/js/main.e700c13d.chunk.js",
-    "main.js.map": "/healthcare-dashboard-page/static/js/main.e700c13d.chunk.js.map",
+    "main.js": "/healthcare-dashboard-page/static/js/main.9f77355a.chunk.js",
+    "main.js.map": "/healthcare-dashboard-page/static/js/main.9f77355a.chunk.js.map",
     "runtime-main.js": "/healthcare-dashboard-page/static/js/runtime-main.b14aa9c4.js",
     "runtime-main.js.map": "/healthcare-dashboard-page/static/js/runtime-main.b14aa9c4.js.map",
     "static/js/2.b20b00a1.chunk.js": "/healthcare-dashboard-page/static/js/2.b20b00a1.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.b14aa9c4.js",
     "static/js/2.b20b00a1.chunk.js",
     "static/css/main.dc341f9e.chunk.css",
-    "static/js/main.e700c13d.chunk.js"
+    "static/js/main.9f77355a.chunk.js"
   ]
 }
