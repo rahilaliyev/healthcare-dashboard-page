@@ -1,0 +1,42 @@
+$black: #25282b;
+$blue: #336cfb;
+$blueHover: #558eff;
+$borderGrey: #e8e8e8;
+$grey: #a0a4a8;
+$greyDark: #52575c;
+$greyLight: #dbdde0;
+$red: #ff6760;
+$white: #ffffff;
+$boxShadowLarge: 0px 12px 26px rgba(16, 30, 115, 0.06);
+$boxShadowDefault: 0px 4px 16px rgba(16, 30, 115, 0.08);
+$boxShadowSmall: 0px 0px 8px rgba(16, 30, 115, 0.12);
+
+@mixin flex($justify, $alignItems, $flexDir) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $alignItems;
+  flex-direction: $flexDir;
+}
+
+@mixin grid($column, $row) {
+  display: grid;
+  grid-template-columns: $column;
+  grid-template-rows: $row;
+}
+
+@mixin fonts($weight, $size, $lineHeight, $letterSpacing) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin button($background, $border, $outline) {
+  background: $background;
+  border: $border;
+  outline: $outline;
+}

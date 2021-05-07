@@ -129,6 +129,27 @@ const LittleCharts = () => {
         width: 0,
       },
     },
+    tooltip: {
+      enabled: true,
+      shared: true,
+      style: {
+        fontSize: "16px",
+        fontFamily: "Lato",
+      },
+      y: {
+        show: true,
+      },
+      custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+        return (
+          '<div class="arrow_box">' +
+          "<span>" +
+          "$" +
+          series[seriesIndex][dataPointIndex] +
+          "</span>" +
+          "</div>"
+        );
+      },
+    },
     responsive: [
       {
         breakpoint: 350,
@@ -218,7 +239,8 @@ const LittleCharts = () => {
         format: "d MMMM",
       },
       tooltip: {
-        enabled: false,
+        enabled: true,
+        shared: true,
       },
       axisBorder: {
         show: true,
@@ -237,8 +259,24 @@ const LittleCharts = () => {
       },
     },
     tooltip: {
-      intersect: true,
-      shared: false,
+      enabled: true,
+      shared: true,
+      style: {
+        fontSize: "16px",
+        fontFamily: "Lato",
+      },
+      y: {
+        show: true,
+      },
+      custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+        return (
+          '<div class="arrow_box">' +
+          "<span>" +
+          series[seriesIndex][dataPointIndex] +
+          "</span>" +
+          "</div>"
+        );
+      },
     },
     markers: {
       size: 4,

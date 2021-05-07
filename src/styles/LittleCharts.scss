@@ -1,18 +1,26 @@
+@import "variables.scss";
+
 .little-charts-container {
   display: flex;
   justify-content: space-between;
   margin: 15px 0;
   .little-chart {
-    box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+    box-shadow: $boxShadowLarge;
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: $white;
     margin: 15px 0;
     width: 49%;
+    .arrow_box {
+      @include flex(center, center, row);
+      position: relative;
+      background: $white;
+      border: 1px solid $white;
+      box-shadow: $boxShadowSmall;
+      @include size(100px, 32px);
+    }
   }
 }
 .apexcharts-xaxis-label {
-  font-size: 10px;
-  font-weight: 700;
+  @include fonts(700, 0.625rem, 0.75rem, 0.2px);
   text-align: center;
-  line-height: 12px;
 }

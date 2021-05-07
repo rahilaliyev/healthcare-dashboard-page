@@ -19,13 +19,13 @@ const Main = () => {
       .catch((err) => console.log(err));
   }, [dispatch]);
   return (
-    <div className="main">
+    <section className="main">
       <Search />
-      <Cards />
-      <Chart />
+      <Cards data={data} />
+      <Chart data={data} />
       <LittleCharts />
       {data.data ? <Table data={data} /> : ""}
-    </div>
+    </section>
   );
 };
 

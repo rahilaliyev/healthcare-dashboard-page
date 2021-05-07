@@ -2,46 +2,45 @@ import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import "../styles/Chart.scss";
 
-const Chart = () => {
+const Chart = (props) => {
   const [options] = useState({
     series: [
       {
         name: "Patients 2019",
         data: [
-          null,
-          50,
-          80,
-          125,
-          100,
-          160,
-          90,
-          155,
-          115,
-          175,
-          123,
-          95,
-          175,
-          null,
+          props.data.data.ChartYaxis[0],
+          props.data.data.ChartYaxis[1],
+          props.data.data.ChartYaxis[2],
+          props.data.data.ChartYaxis[3],
+          props.data.data.ChartYaxis[4],
+          props.data.data.ChartYaxis[5],
+          props.data.data.ChartYaxis[6],
+          props.data.data.ChartYaxis[7],
+          props.data.data.ChartYaxis[8],
+          props.data.data.ChartYaxis[9],
+          props.data.data.ChartYaxis[10],
+          props.data.data.ChartYaxis[11],
+          props.data.data.ChartYaxis[12],
+          props.data.data.ChartYaxis[13],
         ],
       },
       {
         name: "Patients 2020",
-
         data: [
-          null,
-          147,
-          110,
-          135,
-          205,
-          125,
-          109,
-          170,
-          180,
-          130,
-          220,
-          190,
-          240,
-          null,
+          props.data.data.ChartYaxis2[0],
+          props.data.data.ChartYaxis2[1],
+          props.data.data.ChartYaxis2[2],
+          props.data.data.ChartYaxis2[3],
+          props.data.data.ChartYaxis2[4],
+          props.data.data.ChartYaxis2[5],
+          props.data.data.ChartYaxis2[6],
+          props.data.data.ChartYaxis2[7],
+          props.data.data.ChartYaxis2[8],
+          props.data.data.ChartYaxis2[9],
+          props.data.data.ChartYaxis2[10],
+          props.data.data.ChartYaxis2[11],
+          props.data.data.ChartYaxis2[12],
+          props.data.data.ChartYaxis2[13],
         ],
       },
     ],
@@ -208,7 +207,7 @@ const Chart = () => {
     },
   });
   return (
-    <div className="big-chart">
+    <section className="big-chart">
       <div>
         <ReactApexChart
           options={options.options}
@@ -218,7 +217,7 @@ const Chart = () => {
           type="area"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

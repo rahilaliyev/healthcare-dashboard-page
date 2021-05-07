@@ -1,7 +1,8 @@
+@import "variables.scss";
+
 .Sidebar {
-  width: 20%;
-  height: 100vh;
-  background-color: #ffffff;
+  @include size (20%, 100vh);
+  background-color: $white;
   box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
   position: sticky;
   top: 0;
@@ -14,21 +15,32 @@
       }
     }
   }
+  .search {
+    background-color: $white;
+    padding: 24px;
+    display: none;
+
+    input {
+      outline: none;
+      border: none;
+      padding-left: 12px;
+      width: 70%;
+    }
+  }
   p {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: #a0a4a8;
+    @include fonts(400, 0.875rem, 1.25rem, 0.1px);
+    color: $grey;
     padding: 14px 24px;
   }
 
   li {
     padding: 14px 5px;
+    width: 100%;
 
     &:hover {
       svg {
         path {
-          fill: #558eff;
+          fill: $blueHover;
         }
       }
     }
@@ -37,20 +49,18 @@
     }
     a {
       text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 20px;
-      color: #52575c;
+      @include fonts(700, 0.875rem, 1.25rem, 0.1px);
+      color: $greyDark;
       margin-left: 20px;
       &:hover {
-        color: #558eff;
+        color: $blueHover;
       }
       span {
         margin: 10px;
       }
     }
     &:last-child {
-      border-top: 1px solid #e8e8e8;
+      border-top: 1px solid $borderGrey;
       margin-top: 22px;
       padding-top: 22px;
     }

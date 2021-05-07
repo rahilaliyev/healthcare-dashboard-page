@@ -116,7 +116,6 @@ const Appointment = (props) => {
           <img src={DeleteVector} alt="Delete Vector" />,
         ],
       },
-      
     ],
     [props.data.data]
   );
@@ -129,8 +128,8 @@ const Appointment = (props) => {
     prepareRow,
   } = useTable({ columns, data });
   return (
-    <div className="table">
-      <p>Appointment Activity</p>
+    <section className="table">
+      <h5>Appointment Activity</h5>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -159,7 +158,7 @@ const Appointment = (props) => {
           })}
         </tbody>
       </table>
-    </div>
+    </section>
   );
 };
 

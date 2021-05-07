@@ -5,6 +5,10 @@
   font-family: "Lato", "Calibri", sans-serif;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   background: #f6f8fb;
   margin: 0;

@@ -1,29 +1,25 @@
+@import "variables.scss";
+
 .cards {
-  display: flex;
-  justify-content: space-between;
+  @include flex(space-between, initial, row);
   margin: 15px 0;
   .card-lists {
-    display: flex;
-    background-color: #ffffff;
+    @include flex(initial, center, row);
+    background-color: $white;
     padding-left: 24px;
-    align-items: center;
     width: 22%;
-    box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+    box-shadow: $boxShadowLarge;
     border-radius: 8px;
     .info-and-number {
       margin-left: 24px;
       p:first-child {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 20px;
+        @include fonts(700, 0.875rem, 1.25rem, 0.1px);
         text-align: left;
       }
       p:last-child {
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 24px;
+        @include fonts(400, 1.125rem, 1.25rem, 0.1px);
         text-align: left;
-        color: #336cfb;
+        color: $blue;
       }
     }
   }

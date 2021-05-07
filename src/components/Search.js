@@ -18,7 +18,7 @@ const Search = () => {
   return (
     <div>
       <div className="search-and-notification">
-        <div class="hamburger-menu" onClick={handleSideBar}>
+        <div className="hamburger-menu" onClick={handleSideBar}>
           <div className="hamburger-line"></div>
           <div className="hamburger-line"></div>
           <div className="hamburger-line"></div>

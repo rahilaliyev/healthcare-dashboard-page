@@ -5,6 +5,7 @@ import "../styles/Sidebar.scss";
 import { changePage } from "../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import SearchIcon from "../assets/Search-icon.png";
 
 const Sidebar = () => {
   const hideSidebar = () => {
@@ -139,27 +140,35 @@ const Sidebar = () => {
     },
   ];
   return (
-    <div className="Sidebar">
+    <header className="Sidebar">
       <div className="logo">
-        <img src={Logo} alt="Logo" />
-        <img src={LittleLogo} alt="Logo" />
+        <NavLink to="/dashboard">
+          <img src={Logo} alt="Logo" />
+          <img src={LittleLogo} alt="Logo" />
+        </NavLink>
       </div>
       <p>MEDICINE</p>
-      <ul>
-        {SidebarLists.map((item, key) => (
-          <li onClick={() => changeClickList(key)} key={key}>
-            <NavLink
-              onClick={hideSidebar}
-              to={key === 0 ? "/dashboard" : "/appointments"}
-              key={key}
-              style={key === keylist.key ? { color: "#336CFB" } : {}}
-            >
-              {item.image(key)} <span>{item.list} </span>
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="search">
+        <img src={SearchIcon} alt="Logo" />
+        <input type="search" placeholder="Search" />
+      </div>
+      <nav>
+        <ul>
+          {SidebarLists.map((item, key) => (
+            <li onClick={() => changeClickList(key)} key={key}>
+              <NavLink
+                onClick={hideSidebar}
+                to={key === 0 ? "/dashboard" : "/appointments"}
+                key={key}
+                style={key === keylist.key ? { color: "#336CFB" } : {}}
+              >
+                {item.image(key)} <span>{item.list} </span>
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
   );
 };
 

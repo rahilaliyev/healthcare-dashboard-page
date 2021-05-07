@@ -1,21 +1,20 @@
+@import "variables.scss";
+
 .big-chart {
-  box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+  box-shadow: $boxShadowLarge;
   border-radius: 8px;
   margin: 15px 0;
-  background-color: #ffffff;
+  background-color: $white;
   .apexcharts-legend.apexcharts-align-right .apexcharts-legend-series,
   .apexcharts-legend.apexcharts-align-left .apexcharts-legend-serie {
     display: flex !important;
   }
   .arrow_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center, row);
     position: relative;
-    background: #ffffff;
-    border: 1px solid #ffffff;
-    box-shadow: 0px 0px 8px rgba(16, 30, 115, 0.12);
-    width: 64px;
-    height: 32px;
+    background: $white;
+    border: 1px solid $white;
+    box-shadow: $boxShadowSmall;
+    @include size(100px, 32px);
   }
 }

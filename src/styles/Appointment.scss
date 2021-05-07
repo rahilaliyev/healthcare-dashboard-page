@@ -1,13 +1,15 @@
+@import "variables.scss";
 .appointment {
-  width: 100%;
+  width: 90%;
   padding: 25px;
   .table-wrapper {
     .table {
       table {
+        background: $white;
         tbody {
           tr:last-child {
             td {
-              border-bottom: 1px solid #dbdde0;
+              border-bottom: 1px solid $greyLight;
             }
           }
         }
@@ -17,12 +19,9 @@
       padding: 24px;
       display: flex;
       button {
-        background: none;
-        outline: none;
-        border: 1px solid #e8e8e8;
+        @include button(none, none, 1px solid $borderGrey);
         border-radius: 4px;
-        width: 32px;
-        height: 32px;
+        padding: 7px 11px;
         margin: 4px;
         cursor: pointer;
         &:disabled {
@@ -30,8 +29,8 @@
         }
         &:active,
         &:focus {
-          background: #336cfb;
-          color: #ffffff;
+          background: $blue;
+          color: $white;
         }
       }
     }
@@ -42,6 +41,7 @@
       right: 0;
       bottom: 0;
       margin: 24px;
+      cursor: pointer;
     }
   }
 }
