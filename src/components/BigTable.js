@@ -407,10 +407,10 @@ const BigTable = (props) => {
       <div className="table">
         <table {...getTableProps()}>
           <thead>
-            {headerGroups.map((headerGroup) => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
+            {headerGroups.map((headerGroup, key) => (
+              <tr key={key} {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column, key) => (
+                  <th key={key} {...column.getHeaderProps()}>
                     {column.render("Header")}
                   </th>
                 ))}
@@ -418,14 +418,16 @@ const BigTable = (props) => {
             ))}
           </thead>
           <tbody {...getTableBodyProps()}>
-            {page.map((row) => {
+            {page.map((row, key) => {
               prepareRow(row);
               return (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map((cell) => {
+                <tr key={key} {...row.getRowProps()}>
+                  {row.cells.map((cell, key) => {
                     return (
-                      <td {...cell.getCellProps()}>
-                        <div className="image-name">{cell.render("Cell")} </div>
+                      <td key={key} {...cell.getCellProps()}>
+                        <span className="image-name">
+                          {cell.render("Cell")}{" "}
+                        </span>
                       </td>
                     );
                   })}
@@ -433,18 +435,18 @@ const BigTable = (props) => {
               );
             })}
           </tbody>
-          <div className="table-buttons">
-            <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-              &lt;
-            </button>
-            <button onClick={() => gotoPage(0)}>1</button>
-            <button onClick={() => gotoPage(1)}>2</button>
-            <button onClick={() => gotoPage(2)}>3</button>
-            <button onClick={() => nextPage()} disabled={!canNextPage}>
-              &gt;
-            </button>
-          </div>
         </table>
+        <div className="table-buttons">
+          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+            &lt;
+          </button>
+          <button onClick={() => gotoPage(0)}>1</button>
+          <button onClick={() => gotoPage(1)}>2</button>
+          <button onClick={() => gotoPage(2)}>3</button>
+          <button onClick={() => nextPage()} disabled={!canNextPage}>
+            &gt;
+          </button>
+        </div>
       </div>
     </div>
   );

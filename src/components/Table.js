@@ -132,24 +132,27 @@ const Appointment = (props) => {
       <h5>Appointment Activity</h5>
       <table {...getTableProps()}>
         <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+          {headerGroups.map((headerGroup, key) => (
+            <tr key={key} {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column, key) => (
+                <th key={key} {...column.getHeaderProps()}>
+                  {column.render("Header")}
+                </th>
               ))}
+              .
             </tr>
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
+          {rows.map((row, key) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
+              <tr key={key} {...row.getRowProps()}>
+                {row.cells.map((cell, key) => {
                   return (
-                    <td {...cell.getCellProps()}>
+                    <td key={key} {...cell.getCellProps()}>
                       {" "}
-                      <div className="image-name">{cell.render("Cell")} </div>
+                      <span className="image-name">{cell.render("Cell")} </span>
                     </td>
                   );
                 })}

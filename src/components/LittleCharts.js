@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import "../styles/LittleCharts.scss";
-const LittleCharts = () => {
+const LittleCharts = (props) => {
   const [chart1] = useState({
     chart: {
       type: "line",
@@ -24,28 +24,28 @@ const LittleCharts = () => {
         name: "Income in current month",
         data: [
           {
-            x: "06-25-2020 GMT",
-            y: 57000,
+            x: props.data.data.LittleChartXaxis[0],
+            y: props.data.data.LittleChart1Yaxis[0],
           },
           {
-            x: "07-01-2020 GMT",
-            y: 45000,
+            x: props.data.data.LittleChartXaxis[1],
+            y: props.data.data.LittleChart1Yaxis[1],
           },
           {
-            x: "07-08-2020 GMT",
-            y: 79000,
+            x: props.data.data.LittleChartXaxis[2],
+            y: props.data.data.LittleChart1Yaxis[2],
           },
           {
-            x: "07-16-2020 GMT",
-            y: 37000,
+            x: props.data.data.LittleChartXaxis[3],
+            y: props.data.data.LittleChart1Yaxis[3],
           },
           {
-            x: "07-24-2020 GMT",
-            y: 62000,
+            x: props.data.data.LittleChartXaxis[4],
+            y: props.data.data.LittleChart1Yaxis[4],
           },
           {
-            x: "07-31-2020 GMT",
-            y: 42000,
+            x: props.data.data.LittleChartXaxis[5],
+            y: props.data.data.LittleChart1Yaxis[5],
           },
         ],
       },
@@ -193,32 +193,32 @@ const LittleCharts = () => {
         data: [
           {
             x: "07-25-2020 GMT",
-            y: 62000,
+            y: props.data.data.LittleChartYaxis2[0],
           },
           {
             x: "07-26-2020 GMT",
-            y: 38000,
+            y: props.data.data.LittleChartYaxis2[1],
           },
           {
             x: "07-27-2020 GMT",
-            y: 59000,
+            y: props.data.data.LittleChartYaxis2[2],
           },
           {
             x: "07-28-2020 GMT",
-            y: 41000,
+            y: props.data.data.LittleChartYaxis2[3],
           },
           {
             x: "07-29-2020 GMT",
-            y: 78000,
+            y: props.data.data.LittleChartYaxis2[4],
           },
           {
             x: "07-30-2020 GMT",
-            y: 19000,
+            y: props.data.data.LittleChartYaxis2[5],
           },
 
           {
             x: "07-31-2020 GMT",
-            y: 52000,
+            y: props.data.data.LittleChartYaxis2[6],
           },
         ],
       },

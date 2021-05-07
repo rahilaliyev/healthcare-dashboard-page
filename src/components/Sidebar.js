@@ -159,7 +159,6 @@ const Sidebar = () => {
               <NavLink
                 onClick={hideSidebar}
                 to={key === 0 ? "/dashboard" : "/appointments"}
-                key={key}
                 style={key === keylist.key ? { color: "#336CFB" } : {}}
               >
                 {item.image(key)} <span>{item.list} </span>

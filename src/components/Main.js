@@ -21,9 +21,9 @@ const Main = () => {
   return (
     <section className="main">
       <Search />
-      <Cards data={data} />
-      <Chart data={data} />
-      <LittleCharts />
+      {data.data ? <Cards  data={data} /> : ""}
+      {data.data ? <Chart data={data} /> : ""}
+      {data.data ? <LittleCharts data={data} /> : ""}
       {data.data ? <Table data={data} /> : ""}
     </section>
   );
