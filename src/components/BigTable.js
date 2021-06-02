@@ -1,44 +1,17 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useTable, usePagination } from "react-table";
+import { COLUMNS } from "./TableDataColumns";
 import PenVector from "../assets/Pen-vector.png";
 import DeleteVector from "../assets/Delete-vector.png";
 import "../styles/Table.scss";
+import ModalButtons from "./ModalButtons";
 
 const BigTable = (props) => {
-  const columns = useMemo(
-    () => [
-      {
-        Header: "Name",
-        accessor: "col1", // accessor is the "key" in the data
-      },
-
-      {
-        Header: "Email",
-        accessor: "col2",
-      },
-      {
-        Header: "Date",
-        accessor: "col3",
-      },
-      {
-        Header: "Visit Time",
-        accessor: "col4",
-      },
-      {
-        Header: "Doctor",
-        accessor: "col5",
-      },
-      {
-        Header: "Conditions",
-        accessor: "col6",
-      },
-      {
-        Header: "",
-        accessor: "col7",
-      },
-    ],
-    []
-  );
+  const [ModalIsOpen, setModalIsOpen] = useState(false);
+  const setModal = () => {
+    setModalIsOpen(false);
+  };
+  const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(
     () => [
       {
@@ -53,7 +26,11 @@ const BigTable = (props) => {
         col6: props.data.data.List1[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -68,7 +45,11 @@ const BigTable = (props) => {
         col6: props.data.data.List2[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -83,7 +64,11 @@ const BigTable = (props) => {
         col6: props.data.data.List3[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -98,7 +83,11 @@ const BigTable = (props) => {
         col6: props.data.data.List4[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -113,7 +102,11 @@ const BigTable = (props) => {
         col6: props.data.data.List5[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -128,7 +121,11 @@ const BigTable = (props) => {
         col6: props.data.data.List6[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -143,7 +140,11 @@ const BigTable = (props) => {
         col6: props.data.data.List7[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -158,7 +159,11 @@ const BigTable = (props) => {
         col6: props.data.data.List8[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -173,7 +178,11 @@ const BigTable = (props) => {
         col6: props.data.data.List9[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -188,7 +197,11 @@ const BigTable = (props) => {
         col6: props.data.data.List8[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -203,7 +216,11 @@ const BigTable = (props) => {
         col6: props.data.data.List9[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -218,7 +235,11 @@ const BigTable = (props) => {
         col6: props.data.data.List10[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -233,7 +254,11 @@ const BigTable = (props) => {
         col6: props.data.data.List2[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -248,7 +273,11 @@ const BigTable = (props) => {
         col6: props.data.data.List2[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -263,7 +292,11 @@ const BigTable = (props) => {
         col6: props.data.data.List3[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -278,7 +311,11 @@ const BigTable = (props) => {
         col6: props.data.data.List4[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -293,7 +330,11 @@ const BigTable = (props) => {
         col6: props.data.data.List3[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -308,7 +349,11 @@ const BigTable = (props) => {
         col6: props.data.data.List4[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -323,9 +368,14 @@ const BigTable = (props) => {
         col6: props.data.data.List10[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
+
       {
         col1: [
           <img src={props.data.data.List10[6]} alt="avatar10" />,
@@ -338,7 +388,11 @@ const BigTable = (props) => {
         col6: props.data.data.List10[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -353,7 +407,11 @@ const BigTable = (props) => {
         col6: props.data.data.List8[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -368,7 +426,11 @@ const BigTable = (props) => {
         col6: props.data.data.List9[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
       {
@@ -383,7 +445,11 @@ const BigTable = (props) => {
         col6: props.data.data.List10[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalIsOpen(true)}
+          />,
         ],
       },
     ],
@@ -398,10 +464,40 @@ const BigTable = (props) => {
     nextPage,
     previousPage,
     canPreviousPage,
+    state,
     canNextPage,
     gotoPage,
     prepareRow,
-  } = useTable({ columns, data }, usePagination);
+  } = useTable({ columns: columns, data }, usePagination);
+
+  const buttons = [
+    {
+      func: () => previousPage(),
+      disabled: !canPreviousPage,
+      number: "<",
+    },
+    {
+      func: () => gotoPage(0),
+      disabled: "",
+      number: 1,
+    },
+    {
+      func: () => gotoPage(1),
+      disabled: "",
+      number: 2,
+    },
+    {
+      func: () => gotoPage(2),
+      disabled: "",
+      number: 3,
+    },
+    {
+      func: () => nextPage(),
+      disabled: !canNextPage,
+      number: ">",
+    },
+  ];
+
   return (
     <div className="table-wrapper">
       <div className="table">
@@ -426,7 +522,7 @@ const BigTable = (props) => {
                     return (
                       <td key={key} {...cell.getCellProps()}>
                         <span className="image-name">
-                          {cell.render("Cell")}{" "}
+                          {cell.render("Cell")}
                         </span>
                       </td>
                     );
@@ -437,17 +533,23 @@ const BigTable = (props) => {
           </tbody>
         </table>
         <div className="table-buttons">
-          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            &lt;
-          </button>
-          <button onClick={() => gotoPage(0)}>1</button>
-          <button onClick={() => gotoPage(1)}>2</button>
-          <button onClick={() => gotoPage(2)}>3</button>
-          <button onClick={() => nextPage()} disabled={!canNextPage}>
-            &gt;
-          </button>
+          {buttons.map((item, key) => (
+            <button
+              onClick={item.func}
+              key={key}
+              disabled={item.disabled}
+              style={
+                state.pageIndex === item.number - 1
+                  ? { color: "#ffffff", backgroundColor: "#336cfb" }
+                  : {}
+              }
+            >
+              {item.number}
+            </button>
+          ))}
         </div>
       </div>
+      <ModalButtons ModalIsOpen={ModalIsOpen} setModal={setModal} />
     </div>
   );
 };

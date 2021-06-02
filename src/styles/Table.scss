@@ -45,3 +45,27 @@
     }
   }
 }
+
+.modal {
+  @include flex(space-between, center, column);
+
+  .modal-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    button {
+      @include button($blue, 1px solid $blue, none);
+      color: $white;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      &:hover {
+        @include button(none, 1px solid $borderGrey, none);
+        color: #000000;
+      }
+      &:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+}

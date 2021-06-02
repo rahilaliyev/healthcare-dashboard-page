@@ -1,44 +1,17 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useTable } from "react-table";
+import { COLUMNS } from "./TableDataColumns";
 import PenVector from "../assets/Pen-vector.png";
 import DeleteVector from "../assets/Delete-vector.png";
 import "../styles/Table.scss";
+import ModalButtonTable from "./ModalButtonTable";
 
 const Appointment = (props) => {
-  const columns = useMemo(
-    () => [
-      {
-        Header: "Name",
-        accessor: "col1", // accessor is the "key" in the data
-      },
-
-      {
-        Header: "Email",
-        accessor: "col2",
-      },
-      {
-        Header: "Date",
-        accessor: "col3",
-      },
-      {
-        Header: "Visit Time",
-        accessor: "col4",
-      },
-      {
-        Header: "Doctor",
-        accessor: "col5",
-      },
-      {
-        Header: "Conditions",
-        accessor: "col6",
-      },
-      {
-        Header: "",
-        accessor: "col7",
-      },
-    ],
-    []
-  );
+  const [ModalOpenTable, setModalTable] = useState(false);
+  const setModalTableFunc = () => {
+    setModalTable(false);
+  };
+  const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(
     () => [
       {
@@ -53,7 +26,11 @@ const Appointment = (props) => {
         col6: props.data.data.List1[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalTable(true)}
+          />,
         ],
       },
       {
@@ -68,7 +45,11 @@ const Appointment = (props) => {
         col6: props.data.data.List2[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalTable(true)}
+          />,
         ],
       },
       {
@@ -83,7 +64,11 @@ const Appointment = (props) => {
         col6: props.data.data.List3[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalTable(true)}
+          />,
         ],
       },
       {
@@ -98,7 +83,11 @@ const Appointment = (props) => {
         col6: props.data.data.List4[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalTable(true)}
+          />,
         ],
       },
       {
@@ -113,20 +102,20 @@ const Appointment = (props) => {
         col6: props.data.data.List5[5],
         col7: [
           <img src={PenVector} alt="Pen Vector" />,
-          <img src={DeleteVector} alt="Delete Vector" />,
+          <img
+            src={DeleteVector}
+            alt="Delete Vector"
+            onClick={() => setModalTable(true)}
+          />,
         ],
       },
     ],
     [props.data.data]
   );
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, data });
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ columns: columns, data });
+
   return (
     <section className="table">
       <h5>Appointment Activity</h5>
@@ -151,7 +140,6 @@ const Appointment = (props) => {
                 {row.cells.map((cell, key) => {
                   return (
                     <td key={key} {...cell.getCellProps()}>
-                      {" "}
                       <span className="image-name">{cell.render("Cell")} </span>
                     </td>
                   );
@@ -161,6 +149,10 @@ const Appointment = (props) => {
           })}
         </tbody>
       </table>
+      <ModalButtonTable
+        ModalOpenTable={ModalOpenTable}
+        setModalTableFunc={setModalTableFunc}
+      />
     </section>
   );
 };
