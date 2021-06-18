@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import "_variables.scss";
 .table {
   background-color: $white;
   box-shadow: $boxShadowLarge;
@@ -12,8 +12,8 @@
     text-align: left;
     border-spacing: 0;
     thead {
+      background-color: rgba(232, 232, 232, 0.2);
       tr {
-        background-color: rgba(232, 232, 232, 0.2);
         th {
           @include fonts(700, 0.875rem, 1.25rem, 0.1px);
           padding: 20px;
@@ -27,17 +27,23 @@
           padding: 15px;
           @include fonts(400, 0.875rem, 1.25rem, 0.1px);
           border-top: 1px solid $borderGrey;
-          &:last-child {
-            .image-name {
-              img {
-                cursor: pointer;
-              }
+          &:first-child {
+            @include flex(inherit, center, row);
+            img {
+              margin-right: 10px;
             }
           }
           .image-name {
             @include flex(flex-start, center, row);
             img {
               margin-right: 12px;
+            }
+          }
+          &:last-child {
+            .image-name {
+              img {
+                cursor: pointer;
+              }
             }
           }
         }

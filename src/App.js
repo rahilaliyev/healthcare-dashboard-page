@@ -1,10 +1,10 @@
   
 import React from "react";
-import "../styles/App.scss";
-import Sidebar from "./Sidebar";
-import Main from "./Main";
-import Appointment from "./Appointment";
-import "../styles/Responsive.scss";
+import "./styles/App.scss";
+import Sidebar from "./components/Sidebar";
+import Main from "./components/Main";
+import Appointment from "./components/Appointment";
+import "./styles/Responsive.scss";
 import {
   HashRouter as Router,
   Redirect,

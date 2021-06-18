@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { useTable } from "react-table";
+// import { useTable } from "react-table";
 // import { COLUMNS } from "./TableDataColumns";
 import PenVector from "../assets/Pen-vector.png";
 import DeleteVector from "../assets/Delete-vector.png";
 import "../styles/Table.scss";
 import { useSelector } from "react-redux";
-// import ModalButtonTable from "./ModalButtonTable";
+import ModalButtonTable from "./ModalButtonTable";
 
 const Appointment = (props) => {
   const data = useSelector((state) =>
     state.allDataReducer.data.Lists.slice(0, 5)
   );
 
-  // const [ModalOpenTable, setModalTable] = useState(false);
-  // const setModalTableFunc = () => {
-  //   setModalTable(false);
-  // };
+  const [ModalOpenTable, setModalTable] = useState(false);
+  const setModalTableFunc = () => {
+    setModalTable(false);
+  };
   // const columns = useMemo(() => COLUMNS, []);
   // const data = useMemo(
   //   () => [
@@ -126,12 +126,15 @@ const Appointment = (props) => {
       <h5>Appointment Activity</h5>
       <table>
         <thead>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Date</th>
-          <th>Doctor</th>
-          <th>Visit Time</th>
-          <th>Conditions</th>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Doctor</th>
+            <th>Visit Time</th>
+            <th>Conditions</th>
+            <th></th>
+          </tr>
         </thead>
         <tbody>
           {data.map((row) => (
@@ -145,15 +148,25 @@ const Appointment = (props) => {
                 <td>{row.VisitTime}</td>
                 <td>{row.Doctor}</td>
                 <td>{row.Conditions}</td>
+                <td>
+                  <span className="image-name">
+                    <img src={PenVector} alt="PenVector" />
+                    <img
+                      src={DeleteVector}
+                      alt="DeleteVector"
+                      onClick={() => setModalTable(true)}
+                    />
+                  </span>
+                </td>
               </tr>
             </>
           ))}
         </tbody>
       </table>
-      {/* <ModalButtonTable
+      <ModalButtonTable
         ModalOpenTable={ModalOpenTable}
         setModalTableFunc={setModalTableFunc}
-      /> */}
+      />
     </section>
   );
 };

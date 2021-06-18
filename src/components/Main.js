@@ -17,7 +17,6 @@ const Main = () => {
       .get("https://desolate-hamlet-85078.herokuapp.com/getData")
       .then((res) => dispatch(addData(res.data)))
       .catch((err) => console.log(err));
-    console.log(data);
   }, [dispatch]);
   return (
     <section className="main">
