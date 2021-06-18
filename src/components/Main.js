@@ -17,11 +17,12 @@ const Main = () => {
       .get("https://desolate-hamlet-85078.herokuapp.com/getData")
       .then((res) => dispatch(addData(res.data)))
       .catch((err) => console.log(err));
+    console.log(data);
   }, [dispatch]);
   return (
     <section className="main">
       <Search />
-      {data.data ? <Cards  data={data} /> : ""}
+      {data.data ? <Cards data={data} /> : ""}
       {data.data ? <Chart data={data} /> : ""}
       {data.data ? <LittleCharts data={data} /> : ""}
       {data.data ? <Table data={data} /> : ""}
