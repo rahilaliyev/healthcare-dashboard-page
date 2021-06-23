@@ -1,125 +1,31 @@
-import React, { useState } from "react";
-// import { useTable } from "react-table";
-// import { COLUMNS } from "./TableDataColumns";
+import React, { useState, useEffect } from "react";
 import PenVector from "../assets/Pen-vector.png";
 import DeleteVector from "../assets/Delete-vector.png";
 import "../styles/Table.scss";
 import { useSelector } from "react-redux";
 import ModalButtonTable from "./ModalButtonTable";
+import axios from "axios";
 
-const Appointment = (props) => {
+const Table = () => {
   const data = useSelector((state) =>
     state.allDataReducer.data.Lists.slice(0, 5)
   );
+  useEffect(() => {
+    const index = 3;
+    axios
+      .post("https://desolate-hamlet-85078.herokuapp.com/deleteUsers", index)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  });
 
-  const [ModalOpenTable, setModalTable] = useState(false);
-  const setModalTableFunc = () => {
-    setModalTable(false);
+  const [ModalOpenTableDelete, setModalTableDelete] = useState(false);
+  const [ModalOpenTableEdit, setModalTableEdit] = useState(false);
+  const setModalTableFuncDelete = () => {
+    setModalTableDelete(false);
   };
-  // const columns = useMemo(() => COLUMNS, []);
-  // const data = useMemo(
-  //   () => [
-  //     {
-  //       col1: [
-  //         <img src={props.data.data.List1[6]} alt="avatar1" />,
-  //         props.data.data.List1[0],
-  //       ],
-  //       col2: props.data.data.List1[1],
-  //       col3: props.data.data.List1[2],
-  //       col4: props.data.data.List1[3],
-  //       col5: props.data.data.List1[4],
-  //       col6: props.data.data.List1[5],
-  //       col7: [
-  //         <img src={PenVector} alt="Pen Vector" />,
-  //         <img
-  //           src={DeleteVector}
-  //           alt="Delete Vector"
-  //           onClick={() => setModalTable(true)}
-  //         />,
-  //       ],
-  //     },
-  //     {
-  //       col1: [
-  //         <img src={props.data.data.List2[6]} alt="avatar2" />,
-  //         props.data.data.List2[0],
-  //       ],
-  //       col2: props.data.data.List2[1],
-  //       col3: props.data.data.List2[2],
-  //       col4: props.data.data.List2[3],
-  //       col5: props.data.data.List2[4],
-  //       col6: props.data.data.List2[5],
-  //       col7: [
-  //         <img src={PenVector} alt="Pen Vector" />,
-  //         <img
-  //           src={DeleteVector}
-  //           alt="Delete Vector"
-  //           onClick={() => setModalTable(true)}
-  //         />,
-  //       ],
-  //     },
-  //     {
-  //       col1: [
-  //         <img src={props.data.data.List3[6]} alt="avatar3" />,
-  //         props.data.data.List3[0],
-  //       ],
-  //       col2: props.data.data.List3[1],
-  //       col3: props.data.data.List3[2],
-  //       col4: props.data.data.List3[3],
-  //       col5: props.data.data.List3[4],
-  //       col6: props.data.data.List3[5],
-  //       col7: [
-  //         <img src={PenVector} alt="Pen Vector" />,
-  //         <img
-  //           src={DeleteVector}
-  //           alt="Delete Vector"
-  //           onClick={() => setModalTable(true)}
-  //         />,
-  //       ],
-  //     },
-  //     {
-  //       col1: [
-  //         <img src={props.data.data.List4[6]} alt="avatar4" />,
-  //         props.data.data.List4[0],
-  //       ],
-  //       col2: props.data.data.List4[1],
-  //       col3: props.data.data.List4[2],
-  //       col4: props.data.data.List4[3],
-  //       col5: props.data.data.List4[4],
-  //       col6: props.data.data.List4[5],
-  //       col7: [
-  //         <img src={PenVector} alt="Pen Vector" />,
-  //         <img
-  //           src={DeleteVector}
-  //           alt="Delete Vector"
-  //           onClick={() => setModalTable(true)}
-  //         />,
-  //       ],
-  //     },
-  //     {
-  //       col1: [
-  //         <img src={props.data.data.List5[6]} alt="avatar5" />,
-  //         props.data.data.List5[0],
-  //       ],
-  //       col2: props.data.data.List5[1],
-  //       col3: props.data.data.List5[2],
-  //       col4: props.data.data.List5[3],
-  //       col5: props.data.data.List5[4],
-  //       col6: props.data.data.List5[5],
-  //       col7: [
-  //         <img src={PenVector} alt="Pen Vector" />,
-  //         <img
-  //           src={DeleteVector}
-  //           alt="Delete Vector"
-  //           onClick={() => setModalTable(true)}
-  //         />,
-  //       ],
-  //     },
-  //   ],
-  //   [props.data.data]
-  // );
-
-  // const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-  //   useTable({ columns: columns, data });
+  const setModalTableFuncEdit = () => {
+    setModalTableEdit(false);
+  };
 
   return (
     <section className="table">
@@ -150,11 +56,15 @@ const Appointment = (props) => {
                 <td>{row.Conditions}</td>
                 <td>
                   <span className="image-name">
-                    <img src={PenVector} alt="PenVector" />
+                    <img
+                      src={PenVector}
+                      alt="PenVector"
+                      onClick={() => setModalTableEdit(true)}
+                    />
                     <img
                       src={DeleteVector}
                       alt="DeleteVector"
-                      onClick={() => setModalTable(true)}
+                      onClick={() => setModalTableDelete(true)}
                     />
                   </span>
                 </td>
@@ -164,11 +74,13 @@ const Appointment = (props) => {
         </tbody>
       </table>
       <ModalButtonTable
-        ModalOpenTable={ModalOpenTable}
-        setModalTableFunc={setModalTableFunc}
+        ModalOpenTableDelete={ModalOpenTableDelete}
+        setModalTableFuncDelete={setModalTableFuncDelete}
+        ModalOpenTableEdit={ModalOpenTableEdit}
+        setModalTableFuncEdit={setModalTableFuncEdit}
       />
     </section>
   );
 };
 
-export default Appointment;
+export default Table;

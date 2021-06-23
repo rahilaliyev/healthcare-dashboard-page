@@ -1,7 +1,22 @@
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import "../styles/LittleCharts.scss";
-const LittleCharts = (props) => {
+import { useSelector } from "react-redux";
+
+const LittleCharts = () => {
+  const LittleChart1Yaxis = useSelector(
+    (state) => state.allDataReducer.data.LittleChart1Yaxis
+  );
+  const LittleChartXaxis = useSelector(
+    (state) => state.allDataReducer.data.LittleChartXaxis
+  );
+  const LittleChartXaxis2 = useSelector(
+    (state) => state.allDataReducer.data.LittleChartXaxis2
+  );
+  const LittleChartYaxis2 = useSelector(
+    (state) => state.allDataReducer.data.LittleChartYaxis2
+  );
+
   const [chart1] = useState({
     chart: {
       type: "line",
@@ -22,32 +37,7 @@ const LittleCharts = (props) => {
     series: [
       {
         name: "Income in current month",
-        data: [
-          {
-            x: props.data.data.LittleChartXaxis[0],
-            y: props.data.data.LittleChart1Yaxis[0],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[1],
-            y: props.data.data.LittleChart1Yaxis[1],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[2],
-            y: props.data.data.LittleChart1Yaxis[2],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[3],
-            y: props.data.data.LittleChart1Yaxis[3],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[4],
-            y: props.data.data.LittleChart1Yaxis[4],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[5],
-            y: props.data.data.LittleChart1Yaxis[5],
-          },
-        ],
+        data: LittleChart1Yaxis,
       },
       {
         name: "",
@@ -61,6 +51,7 @@ const LittleCharts = (props) => {
     },
 
     xaxis: {
+      categories: LittleChartXaxis,
       type: "datetime",
       labels: {
         format: "d MMMM",
@@ -190,37 +181,7 @@ const LittleCharts = (props) => {
     series: [
       {
         name: "Income in current week",
-        data: [
-          {
-            x: "07-25-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[0],
-          },
-          {
-            x: "07-26-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[1],
-          },
-          {
-            x: "07-27-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[2],
-          },
-          {
-            x: "07-28-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[3],
-          },
-          {
-            x: "07-29-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[4],
-          },
-          {
-            x: "07-30-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[5],
-          },
-
-          {
-            x: "07-31-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[6],
-          },
-        ],
+        data: LittleChartYaxis2,
       },
       {
         name: "",
@@ -235,6 +196,7 @@ const LittleCharts = (props) => {
 
     xaxis: {
       type: "datetime",
+      categories: LittleChartXaxis2,
       labels: {
         format: "d MMMM",
       },

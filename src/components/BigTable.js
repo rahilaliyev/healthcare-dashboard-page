@@ -17,7 +17,7 @@ const BigTable = (props) => {
       .get("https://desolate-hamlet-85078.herokuapp.com/getData")
       .then((res) => dispatch(addData(res.data.Lists.slice(0, 10))))
       .catch((err) => console.log(err));
-  });
+  }, [dispatch]);
   // const [ModalIsOpen, setModalIsOpen] = useState(false);
   // const setModal = () => {
   //   setModalIsOpen(false);
@@ -71,7 +71,7 @@ const BigTable = (props) => {
             <th>Appoiafnao</th>
             <th>afafafaf</th>
           </thead>
-          <tbody>
+          {/* <tbody>
             {data.map((row) => (
               <>
                 <tr>
@@ -86,7 +86,7 @@ const BigTable = (props) => {
                 </tr>
               </>
             ))}
-          </tbody>
+          </tbody> */}
         </table>
         <div className="table-buttons">
           {buttons.map((item, key) => (

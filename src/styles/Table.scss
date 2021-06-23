@@ -53,8 +53,8 @@
 }
 
 .modal {
-  @include flex(space-between, center, column);
-
+  @include flex(space-evenly, center, column);
+  height: 85%;
   .modal-buttons {
     margin-top: 30px;
     display: flex;
@@ -72,6 +72,15 @@
       &:first-child {
         margin-right: 5px;
       }
+    }
+  }
+  form {
+    @include flex(inherit, initial, column);
+    input {
+      outline: none;
+      width: 100%;
+      height: 25px;
+      margin: 10px;
     }
   }
 }
