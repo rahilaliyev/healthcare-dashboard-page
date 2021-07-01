@@ -1,8 +1,14 @@
 import { combineReducers } from "redux";
-import allDataReducer from "./allDataReducer";
 import changePageReducer from "./changePageReducer";
+import cardDataReducer from "./cardDataReducer";
+import bigChartDataReducer from "./bigChartDataReducer";
+import littleChartDataReducer from "./littleChartDataReducer";
+import tableDataReducer from "./tableDataReducer";
 
 export default combineReducers({
-   allDataReducer,
-  changePageReducer
+  changePageReducer,
+  cardDataReducer,
+  bigChartDataReducer,
+  littleChartDataReducer,
+  tableDataReducer,
 });

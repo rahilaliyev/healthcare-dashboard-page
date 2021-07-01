@@ -8,60 +8,56 @@ import axios from "axios";
 import { addData } from "../redux/actions/actions";
 
 const BigTable = (props) => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    document.getElementsByClassName("tablePage")[1].style.backgroundColor =
-      "blue";
-    document.getElementsByClassName("tablePage")[1].style.color = "white";
-    axios
-      .get("https://desolate-hamlet-85078.herokuapp.com/getData")
-      .then((res) => dispatch(addData(res.data.Lists.slice(0, 10))))
-      .catch((err) => console.log(err));
-  }, [dispatch]);
-  // const [ModalIsOpen, setModalIsOpen] = useState(false);
-  // const setModal = () => {
-  //   setModalIsOpen(false);
+  // const dispatch = useDispatch();
+  // const tableData = useSelector((state) =>
+  //   state.tableDataReducer.data.Lists.slice(0, 10)
+  // );
+
+  // useEffect(() => {
+  //   axios
+  //     .post("https://desolate-hamlet-85078.herokuapp.com/deleteUsers")
+  //     .then((res) => console.log(res.data.Lists))
+  //     .catch((err) => console.log(err));
+  // }, [dispatch]);
+ 
+
+  // const handlePagination = (e) => {
+  //   if (e.target.innerHTML === "1") {
+  //     axios
+  //       .get("https://desolate-hamlet-85078.herokuapp.com/getData")
+  //       .then((res) => dispatch(addData(res.data.Lists.slice(0, 5))))
+  //       .catch((err) => console.log(err));
+  //   }
+  //   document.getElementsByClassName("tablePage")[1].style.backgroundColor =
+  //     "white";
   // };
-  // const columns = useMemo(() => COLUMNS, []);
-  const data = useSelector((state) => state.allDataReducer.data);
 
-  const handlePagination = (e) => {
-    if (e.target.innerHTML === "1") {
-      axios
-        .get("https://desolate-hamlet-85078.herokuapp.com/getData")
-        .then((res) => dispatch(addData(res.data.Lists.slice(0, 5))))
-        .catch((err) => console.log(err));
-    }
-    document.getElementsByClassName("tablePage")[1].style.backgroundColor =
-      "white";
-  };
-
-  const buttons = [
-    {
-      number: "<",
-      id: 0,
-    },
-    {
-      number: 1,
-      id: 1,
-    },
-    {
-      number: 2,
-      id: 2,
-    },
-    {
-      number: 3,
-      id: 3,
-    },
-    {
-      number: ">",
-      id: 4,
-    },
-  ];
+  // const buttons = [
+  //   {
+  //     number: "<",
+  //     id: 0,
+  //   },
+  //   {
+  //     number: 1,
+  //     id: 1,
+  //   },
+  //   {
+  //     number: 2,
+  //     id: 2,
+  //   },
+  //   {
+  //     number: 3,
+  //     id: 3,
+  //   },
+  //   {
+  //     number: ">",
+  //     id: 4,
+  //   },
+  // ];
 
   return (
     <div className="table-wrapper">
-      <div className="table">
+      {/* <div className="table">
         <table>
           <thead>
             <th>Name</th>
@@ -71,8 +67,8 @@ const BigTable = (props) => {
             <th>Appoiafnao</th>
             <th>afafafaf</th>
           </thead>
-          {/* <tbody>
-            {data.map((row) => (
+          <tbody>
+            {tableData.map((row) => (
               <>
                 <tr>
                   <td>
@@ -86,7 +82,7 @@ const BigTable = (props) => {
                 </tr>
               </>
             ))}
-          </tbody> */}
+          </tbody>
         </table>
         <div className="table-buttons">
           {buttons.map((item, key) => (
@@ -100,7 +96,7 @@ const BigTable = (props) => {
           ))}
         </div>
       </div>
-      {/* <ModalButtons ModalIsOpen={ModalIsOpen} setModal={setModal} /> */}
+      <ModalButtons ModalIsOpen={ModalIsOpen} setModal={setModal} /> */}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-  
 import React from "react";
 import "./styles/App.scss";
 import Sidebar from "./components/Sidebar";
@@ -14,8 +13,8 @@ import {
 import { useSelector } from "react-redux";
 
 const App = () => {
-  const data = useSelector((state) => state.allDataReducer);
   const keylist = useSelector((state) => state.changePageReducer);
+
   return (
     <Router>
       <div className="App">
@@ -25,7 +24,7 @@ const App = () => {
             <Main />
           </Route>
           <Route path="/appointments">
-            <Appointment data={data.data} />
+            <Appointment />
           </Route>
           <Redirect to={keylist.key === 0 ? "/dashboard" : "/appointments"} />
         </Switch>

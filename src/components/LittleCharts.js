@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import "../styles/LittleCharts.scss";
-import { useSelector } from "react-redux";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { littleChartData } from "../redux/actions/actions";
 
 const LittleCharts = () => {
-  const LittleChart1Yaxis = useSelector(
-    (state) => state.allDataReducer.data.LittleChart1Yaxis
-  );
-  const LittleChartXaxis = useSelector(
-    (state) => state.allDataReducer.data.LittleChartXaxis
-  );
-  const LittleChartXaxis2 = useSelector(
-    (state) => state.allDataReducer.data.LittleChartXaxis2
-  );
-  const LittleChartYaxis2 = useSelector(
-    (state) => state.allDataReducer.data.LittleChartYaxis2
-  );
+  const LittleChart = useSelector((state) => state.littleChartDataReducer.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get("https://desolate-hamlet-85078.herokuapp.com/getData")
+      .then((res) => dispatch(littleChartData(res.data.LittleCharts)))
+      .catch((err) => console.log(err));
+  }, [dispatch]);
 
   const [chart1] = useState({
     chart: {
@@ -37,7 +36,7 @@ const LittleCharts = () => {
     series: [
       {
         name: "Income in current month",
-        data: LittleChart1Yaxis,
+        data: LittleChart.LittleChartYaxis,
       },
       {
         name: "",
@@ -51,7 +50,7 @@ const LittleCharts = () => {
     },
 
     xaxis: {
-      categories: LittleChartXaxis,
+      categories: LittleChart.LittleChartXaxis,
       type: "datetime",
       labels: {
         format: "d MMMM",
@@ -181,7 +180,7 @@ const LittleCharts = () => {
     series: [
       {
         name: "Income in current week",
-        data: LittleChartYaxis2,
+        data: LittleChart.LittleChartYaxis2,
       },
       {
         name: "",
@@ -196,7 +195,7 @@ const LittleCharts = () => {
 
     xaxis: {
       type: "datetime",
-      categories: LittleChartXaxis2,
+      categories: LittleChart.LittleChartXaxis2,
       labels: {
         format: "d MMMM",
       },
