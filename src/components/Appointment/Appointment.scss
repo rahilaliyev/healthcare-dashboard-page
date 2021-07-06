@@ -1,7 +1,17 @@
-@import "variables.scss";
+@import "../../styles/variables.scss";
 .appointment {
   width: 90%;
   padding: 25px;
+  .header-and-button {
+    @include flex(space-between, center, row);
+    button {
+      @include size(250px, 50px);
+      @include button($blue, none, none);
+      color: $white;
+      border-radius: 4px;
+      font-size: 1.2rem;
+    }
+  }
   .table-wrapper {
     .table {
       table {

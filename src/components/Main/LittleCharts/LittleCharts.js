@@ -1,7 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
-import "../styles/LittleCharts.scss";
-const LittleCharts = (props) => {
+import "./LittleCharts.scss";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { littleChartData } from "../../../redux/actions/actions";
+
+const LittleCharts = () => {
+  const LittleChart = useSelector((state) => state.littleChartDataReducer.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get("https://desolate-hamlet-85078.herokuapp.com/getData")
+      .then((res) => dispatch(littleChartData(res.data.LittleCharts)))
+      .catch((err) => console.log(err));
+  }, [dispatch]);
+
   const [chart1] = useState({
     chart: {
       type: "line",
@@ -22,32 +36,7 @@ const LittleCharts = (props) => {
     series: [
       {
         name: "Income in current month",
-        data: [
-          {
-            x: props.data.data.LittleChartXaxis[0],
-            y: props.data.data.LittleChart1Yaxis[0],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[1],
-            y: props.data.data.LittleChart1Yaxis[1],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[2],
-            y: props.data.data.LittleChart1Yaxis[2],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[3],
-            y: props.data.data.LittleChart1Yaxis[3],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[4],
-            y: props.data.data.LittleChart1Yaxis[4],
-          },
-          {
-            x: props.data.data.LittleChartXaxis[5],
-            y: props.data.data.LittleChart1Yaxis[5],
-          },
-        ],
+        data: LittleChart.LittleChartYaxis,
       },
       {
         name: "",
@@ -61,6 +50,7 @@ const LittleCharts = (props) => {
     },
 
     xaxis: {
+      categories: LittleChart.LittleChartXaxis,
       type: "datetime",
       labels: {
         format: "d MMMM",
@@ -190,37 +180,7 @@ const LittleCharts = (props) => {
     series: [
       {
         name: "Income in current week",
-        data: [
-          {
-            x: "07-25-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[0],
-          },
-          {
-            x: "07-26-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[1],
-          },
-          {
-            x: "07-27-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[2],
-          },
-          {
-            x: "07-28-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[3],
-          },
-          {
-            x: "07-29-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[4],
-          },
-          {
-            x: "07-30-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[5],
-          },
-
-          {
-            x: "07-31-2020 GMT",
-            y: props.data.data.LittleChartYaxis2[6],
-          },
-        ],
+        data: LittleChart.LittleChartYaxis2,
       },
       {
         name: "",
@@ -235,6 +195,7 @@ const LittleCharts = (props) => {
 
     xaxis: {
       type: "datetime",
+      categories: LittleChart.LittleChartXaxis2,
       labels: {
         format: "d MMMM",
       },

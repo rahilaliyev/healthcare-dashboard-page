@@ -1,51 +1,61 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
-import "../styles/Chart.scss";
+import "./Chart.scss";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { bigChartData } from "../../../redux/actions/actions";
 
-const Chart = (props) => {
+const Chart = () => {
+  const BigChart = useSelector((state) => state.bigChartDataReducer.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    axios
+      .get("https://desolate-hamlet-85078.herokuapp.com/getData")
+      .then((res) => dispatch(bigChartData(res.data.Chart)))
+      .catch((err) => console.log(err));
+  }, [dispatch]);
+
   const [options] = useState({
     series: [
       {
         name: "Patients 2019",
-        data: [
-          props.data.data.ChartYaxis[0],
-          props.data.data.ChartYaxis[1],
-          props.data.data.ChartYaxis[2],
-          props.data.data.ChartYaxis[3],
-          props.data.data.ChartYaxis[4],
-          props.data.data.ChartYaxis[5],
-          props.data.data.ChartYaxis[6],
-          props.data.data.ChartYaxis[7],
-          props.data.data.ChartYaxis[8],
-          props.data.data.ChartYaxis[9],
-          props.data.data.ChartYaxis[10],
-          props.data.data.ChartYaxis[11],
-          props.data.data.ChartYaxis[12],
-          props.data.data.ChartYaxis[13],
-        ],
+        data: BigChart.ChartYaxis,
       },
       {
         name: "Patients 2020",
-        data: [
-          props.data.data.ChartYaxis2[0],
-          props.data.data.ChartYaxis2[1],
-          props.data.data.ChartYaxis2[2],
-          props.data.data.ChartYaxis2[3],
-          props.data.data.ChartYaxis2[4],
-          props.data.data.ChartYaxis2[5],
-          props.data.data.ChartYaxis2[6],
-          props.data.data.ChartYaxis2[7],
-          props.data.data.ChartYaxis2[8],
-          props.data.data.ChartYaxis2[9],
-          props.data.data.ChartYaxis2[10],
-          props.data.data.ChartYaxis2[11],
-          props.data.data.ChartYaxis2[12],
-          props.data.data.ChartYaxis2[13],
-        ],
+        data: BigChart.ChartYaxis2,
       },
     ],
 
     options: {
+      xaxis: {
+        type: "category",
+        categories: BigChart.ChartXaxis,
+        tooltip: {
+          enabled: false,
+        },
+        crosshairs: {
+          show: true,
+          width: 1,
+          opacity: 0.5,
+          stroke: {
+            color: "#A9C1FD",
+            width: 1,
+            dashArray: 5,
+          },
+        },
+        axisBorder: {
+          show: true,
+          height: 2,
+          offsetY: -1,
+        },
+      },
+      yaxis: {
+        tickAmount: 6,
+        min: 0,
+        max: 300,
+      },
       grid: {
         show: true,
         borderColor: "#D7DBDE",
@@ -118,48 +128,6 @@ const Chart = (props) => {
         },
       },
 
-      xaxis: {
-        type: "category",
-        categories: [
-          props.data.data.ChartXaxis[0],
-          props.data.data.ChartXaxis[1],
-          props.data.data.ChartXaxis[2],
-          props.data.data.ChartXaxis[3],
-          props.data.data.ChartXaxis[4],
-          props.data.data.ChartXaxis[5],
-          props.data.data.ChartXaxis[6],
-          props.data.data.ChartXaxis[7],
-          props.data.data.ChartXaxis[8],
-          props.data.data.ChartXaxis[9],
-          props.data.data.ChartXaxis[10],
-          props.data.data.ChartXaxis[11],
-          props.data.data.ChartXaxis[12],
-          props.data.data.ChartXaxis[13],
-        ],
-        tooltip: {
-          enabled: false,
-        },
-        crosshairs: {
-          show: true,
-          width: 1,
-          opacity: 0.5,
-          stroke: {
-            color: "#A9C1FD",
-            width: 1,
-            dashArray: 5,
-          },
-        },
-        axisBorder: {
-          show: true,
-          height: 2,
-          offsetY: -1,
-        },
-      },
-      yaxis: {
-        tickAmount: 6,
-        min: 0,
-        max: 300,
-      },
       legend: {
         fontSize: "12px",
         fontFamily: "Lato, Helvetica, Arial",

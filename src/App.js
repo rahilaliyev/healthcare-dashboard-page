@@ -1,9 +1,9 @@
 import React from "react";
-import "../styles/App.scss";
-import Sidebar from "./Sidebar";
-import Main from "./Main";
-import Appointment from "./Appointment";
-import "../styles/Responsive.scss";
+import "./styles/App.scss";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Main from "./components/Main/Main";
+import Appointment from "./components/Appointment/Appointment";
+import "./styles/Responsive.scss";
 import {
   HashRouter as Router,
   Redirect,
@@ -13,8 +13,8 @@ import {
 import { useSelector } from "react-redux";
 
 const App = () => {
-  const data = useSelector((state) => state.allDataReducer);
   const keylist = useSelector((state) => state.changePageReducer);
+
   return (
     <Router>
       <div className="App">
@@ -24,7 +24,7 @@ const App = () => {
             <Main />
           </Route>
           <Route path="/appointments">
-            <Appointment data={data.data} />
+            <Appointment />
           </Route>
           <Redirect to={keylist.key === 0 ? "/dashboard" : "/appointments"} />
         </Switch>

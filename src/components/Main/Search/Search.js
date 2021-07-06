@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import "../styles/Search.scss";
-import SearchIcon from "../assets/Search-icon.png";
-import Notification from "../assets/notification-icon.png";
-import Avatar from "../assets/avatar-circle.png";
+import "./Search.scss";
+import SearchIcon from "../../../assets/Search-icon.png";
+import Notification from "../../../assets/notification-icon.png";
+import Avatar from "../../../assets/avatar-circle.png";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import { css } from "@emotion/react";
 import BarLoader from "react-spinners/BarLoader";
+import axios from "axios"
 
 const Search = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -22,6 +23,13 @@ const Search = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleMenu = (event) => {
+    axios.post("https://desolate-hamlet-85078.herokuapp.com/users", {
+      name: "Rahil",
+      surname: "Ali",
+      tel: "012",
+    }).then((res) => console.log(res))
+    .catch((err) => console.log(err));
+
     setAnchorEl(event.currentTarget);
   };
 

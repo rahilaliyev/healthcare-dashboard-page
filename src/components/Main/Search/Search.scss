@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import "../../../styles/variables.scss";
 
 .search-and-notification {
   @include flex(space-between, center, row);
@@ -98,7 +98,7 @@
     }
     .profile {
       @include size(40px, 40px);
-      background-image: url(../assets/circle.png);
+      background-image: url(../../../assets/circle.png);
       background-repeat: no-repeat;
       background-position: center;
       cursor: pointer;
