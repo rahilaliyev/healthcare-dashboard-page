@@ -1,7 +1,7 @@
-@import "variables.scss";
+@import "../../styles/variables.scss";
 
 .Sidebar {
-  @include size (20%, 100vh);
+  @include size(20%, 100vh);
   background-color: $white;
   box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
   position: sticky;
@@ -35,7 +35,7 @@
 
   li {
     padding: 14px 5px;
-    width: 100%;
+    width: fit-content;
 
     &:hover {
       svg {

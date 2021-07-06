@@ -1,0 +1,37 @@
+@import "../../styles/_variables.scss";
+
+.modal {
+  @include flex(space-evenly, center, column);
+  height: 95%;
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    button {
+      @include button($blue, 1px solid $blue, none);
+      color: $white;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      &:hover {
+        @include button(none, 1px solid $borderGrey, none);
+        color: #000000;
+      }
+      &:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+  form {
+    @include flex(inherit, flex-end, column);
+    input {
+      outline: none;
+      width: 400px;
+      height: 40px;
+      margin: 10px;
+    }
+    .input-errors {
+      color: red;
+      font-size: 15px;
+    }
+  }
+}

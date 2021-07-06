@@ -1,8 +1,9 @@
 import React from "react";
 import Modal from "react-modal";
+import "./Modal.scss";
 
 Modal.setAppElement("#root");
-const ModalButtonTable = (props) => {
+const ModalButtonTableDelete = (props) => {
   let {
     ModalOpenTableDelete,
     setModalTableFuncDelete,
@@ -92,4 +93,4 @@ const ModalButtonTable = (props) => {
   );
 };
 
-export default ModalButtonTable;
+export default ModalButtonTableDelete;

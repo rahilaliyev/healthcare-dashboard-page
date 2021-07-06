@@ -4,6 +4,7 @@ import cardDataReducer from "./cardDataReducer";
 import bigChartDataReducer from "./bigChartDataReducer";
 import littleChartDataReducer from "./littleChartDataReducer";
 import tableDataReducer from "./tableDataReducer";
+import littleTableDataReducer from "./littleTableDataReducer";
 
 export default combineReducers({
   changePageReducer,
@@ -11,4 +12,6 @@ export default combineReducers({
   bigChartDataReducer,
   littleChartDataReducer,
   tableDataReducer,
+  littleTableDataReducer,
+
 });

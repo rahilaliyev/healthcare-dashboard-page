@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
-import "../styles/LittleCharts.scss";
+import "./LittleCharts.scss";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { littleChartData } from "../redux/actions/actions";
+import { littleChartData } from "../../../redux/actions/actions";
 
 const LittleCharts = () => {
   const LittleChart = useSelector((state) => state.littleChartDataReducer.data);

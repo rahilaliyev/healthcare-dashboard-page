@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Table.scss";
+import "./Table.scss";
 import { useSelector, useDispatch } from "react-redux";
-import ModalButtonTable from "./ModalButtonTable";
-import PenVector from "../assets/Pen-vector.png";
-import DeleteVector from "../assets/Delete-vector.png";
-import { tableData } from "../redux/actions/actions";
+import ModalButtonTable from "../../Appointment/ModalButtonTableDelete";
+import PenVector from "../../../assets/Pen-vector.png";
+import DeleteVector from "../../../assets/Delete-vector.png";
+import { littleTableData } from "../../../redux/actions/actions";
 import axios from "axios";
 import moment from "moment";
 
 const Table = () => {
-  const tableInfoData = useSelector((state) => state.tableDataReducer.data);
+  const tableInfoData = useSelector(
+    (state) => state.littleTableDataReducer.data
+  );
   const dispatch = useDispatch();
   useEffect(() => {
     axios
       .get("https://desolate-hamlet-85078.herokuapp.com/getData")
-      .then((res) => dispatch(tableData(res.data.Lists)))
+      .then((res) => dispatch(littleTableData(res.data.List2)))
       .catch((err) => console.log(err));
   }, [dispatch]);
 
@@ -49,7 +51,7 @@ const Table = () => {
                 <img src={row.Image} alt="tablePhoto" /> {row.Name}
               </td>
               <td>{row.Email}</td>
-              <td>{moment(row.Date.seconds).format("DD/MM/YYYY")}</td>
+              <td>{moment.unix(row.Date.seconds).format("MM/DD/YYYY")}</td>
               <td>{row.VisitTime}</td>
               <td>{row.Doctor}</td>
               <td>{row.Conditions}</td>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../styles/Search.scss";
-import SearchIcon from "../assets/Search-icon.png";
-import Notification from "../assets/notification-icon.png";
-import Avatar from "../assets/avatar-circle.png";
+import "./Search.scss";
+import SearchIcon from "../../../assets/Search-icon.png";
+import Notification from "../../../assets/notification-icon.png";
+import Avatar from "../../../assets/avatar-circle.png";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import IconButton from "@material-ui/core/IconButton";

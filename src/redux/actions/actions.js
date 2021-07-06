@@ -4,6 +4,8 @@ import {
   BIG_CHART_DATA,
   LITTLE_CHART_DATA,
   TABLE_DATA,
+  LITTLE_TABLE_DATA,
+  CHANGE_DATA,
 } from "./actionTypes";
 
 export const cardData = (data) => {
@@ -24,4 +26,12 @@ export const littleChartData = (data) => {
 
 export const tableData = (data) => {
   return { type: TABLE_DATA, data };
+};
+
+export const littleTableData = (data) => {
+  return { type: LITTLE_TABLE_DATA, data };
+};
+
+export const changeData = (data) => {
+  return { type: CHANGE_DATA, data };
 };

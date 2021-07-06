@@ -1,4 +1,4 @@
-@import "_variables.scss";
+@import "../../../styles/_variables.scss";
 .table {
   background-color: $white;
   box-shadow: $boxShadowLarge;
@@ -48,39 +48,6 @@
           }
         }
       }
-    }
-  }
-}
-
-.modal {
-  @include flex(space-evenly, center, column);
-  height: 85%;
-  .modal-buttons {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    button {
-      @include button($blue, 1px solid $blue, none);
-      color: $white;
-      padding: 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      &:hover {
-        @include button(none, 1px solid $borderGrey, none);
-        color: #000000;
-      }
-      &:first-child {
-        margin-right: 5px;
-      }
-    }
-  }
-  form {
-    @include flex(inherit, initial, column);
-    input {
-      outline: none;
-      width: 100%;
-      height: 25px;
-      margin: 10px;
     }
   }
 }

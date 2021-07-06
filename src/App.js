@@ -1,8 +1,8 @@
 import React from "react";
 import "./styles/App.scss";
-import Sidebar from "./components/Sidebar";
-import Main from "./components/Main";
-import Appointment from "./components/Appointment";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Main from "./components/Main/Main";
+import Appointment from "./components/Appointment/Appointment";
 import "./styles/Responsive.scss";
 import {
   HashRouter as Router,

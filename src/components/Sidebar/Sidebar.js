@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../assets/logo.png";
-import LittleLogo from "../assets/logo-image.png";
-import "../styles/Sidebar.scss";
-import { changePage } from "../redux/actions/actions";
+import Logo from "../../assets/logo.png";
+import LittleLogo from "../../assets/logo-image.png";
+import "./Sidebar.scss";
+import { changePage } from "../../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import SearchIcon from "../assets/Search-icon.png";
+import SearchIcon from "../../assets/Search-icon.png";
 
 const Sidebar = () => {
   const hideSidebar = () => {

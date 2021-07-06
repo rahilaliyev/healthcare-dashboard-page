@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
-import "../styles/Chart.scss";
+import "./Chart.scss";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { bigChartData } from "../redux/actions/actions";
+import { bigChartData } from "../../../redux/actions/actions";
 
 const Chart = () => {
   const BigChart = useSelector((state) => state.bigChartDataReducer.data);

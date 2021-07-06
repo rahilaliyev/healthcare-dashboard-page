@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import "../styles/Cards.scss";
+import "./Cards.scss";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { cardData } from "../redux/actions/actions";
+import { cardData } from "../../../redux/actions/actions";
 
 const Cards = () => {
   const CardsLists = useSelector((state) => state.cardDataReducer.data);
