@@ -9,9 +9,15 @@ import axios from "axios";
 import moment from "moment";
 
 const Table = () => {
+  const [index, setIndex] = useState();
   const tableInfoData = useSelector(
     (state) => state.littleTableDataReducer.data
   );
+
+  const dataTable = useSelector(
+    (state) => state.littleTableDataReducer.data[index]
+  );
+
   const dispatch = useDispatch();
   useEffect(() => {
     axios
@@ -29,6 +35,29 @@ const Table = () => {
     setModalTableEdit(false);
   };
 
+  const deleteUser = (key) => {
+    setIndex(key);
+  };
+  const userDelete = () => {
+    let deleteUser = {
+      Name: dataTable.Name,
+      Email: dataTable.Email,
+      Date: dataTable.Date,
+      Doctor: dataTable.Doctor,
+      VisitTime: dataTable.VisitTime,
+      Conditions: dataTable.Conditions,
+      Image: dataTable.Image,
+      id: dataTable.id,
+    };
+
+    axios
+      .delete(
+        "https://desolate-hamlet-85078.herokuapp.com/deleteUser",
+        deleteUser
+      )
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
   return (
     <section className="table">
       <h5>Appointment Activity</h5>
@@ -45,8 +74,8 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {tableInfoData.map((row) => (
-            <tr>
+          {tableInfoData.map((row, key) => (
+            <tr key={key}>
               <td>
                 <img src={row.Image} alt="tablePhoto" /> {row.Name}
               </td>
@@ -65,7 +94,11 @@ const Table = () => {
                   <img
                     src={DeleteVector}
                     alt="DeleteVector"
-                    onClick={() => setModalTableDelete(true)}
+                    key={key}
+                    onClick={() => {
+                      setModalTableDelete(true);
+                      deleteUser(key);
+                    }}
                   />
                 </span>
               </td>
@@ -78,6 +111,7 @@ const Table = () => {
         setModalTableFuncDelete={setModalTableFuncDelete}
         ModalOpenTableEdit={ModalOpenTableEdit}
         setModalTableFuncEdit={setModalTableFuncEdit}
+        userDelete={userDelete}
       />
     </section>
   );

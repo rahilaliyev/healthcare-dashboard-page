@@ -9,6 +9,7 @@ const ModalButtonTableDelete = (props) => {
     setModalTableFuncDelete,
     ModalOpenTableEdit,
     setModalTableFuncEdit,
+    userDelete,
   } = props;
 
   return (
@@ -35,7 +36,7 @@ const ModalButtonTableDelete = (props) => {
           <h3>Are you sure you want to delete?</h3>
           <div className="modal-buttons">
             <button onClick={setModalTableFuncDelete}>No</button>
-            <button>Yes</button>
+            <button onClick={userDelete}>Yes</button>
           </div>
         </div>
       </Modal>
