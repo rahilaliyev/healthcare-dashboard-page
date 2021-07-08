@@ -22,16 +22,17 @@
     }
   }
   form {
-    @include flex(inherit, flex-end, column);
+    @include flex(inherit, center, column);
     input {
       outline: none;
       width: 400px;
       height: 40px;
-      margin: 10px;
+      margin: 20px;
     }
     .input-errors {
       color: red;
       font-size: 15px;
+      margin: -10px 0 15px 0px;
     }
   }
 }
