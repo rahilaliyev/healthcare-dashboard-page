@@ -25,25 +25,7 @@
         }
       }
     }
-    .table-buttons {
-      padding: 24px;
-      display: flex;
-      button {
-        @include button(none, 1px solid $borderGrey, none);
-        border-radius: 4px;
-        padding: 7px 11px;
-        margin: 4px;
-        cursor: pointer;
-        &:disabled {
-          opacity: 0.7;
-        }
-        &:active,
-        &:focus {
-          background: $blue;
-          color: $white;
-        }
-      }
-    }
+  
   }
   .icon {
     img {

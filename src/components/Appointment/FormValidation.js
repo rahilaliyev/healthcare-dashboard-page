@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import * as Yup from "yup";
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
 import axios from "axios";
 import { changeData } from "../../redux/actions/actions";
 import { useDispatch } from "react-redux";
+import TimePicker from "./TimePicker";
+import moment from "moment";
+import Snackbar from "@material-ui/core/Snackbar";
 
 const FormValidation = (props) => {
   const dispatch = useDispatch();
+  const value1 = useRef("");
+  const value2 = useRef("");
+
+  const [open, setOpen] = useState(false);
+  const handleClick = () => {
+    setOpen(true);
+  };
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
   return (
     <div>
       <Formik
         initialValues={{
           Name: "",
           Email: "",
-          VisitTime: "",
+          StartVisitTime: value1.current.value,
+          EndVisitTime: value2.current.value,
           Doctor: "",
           Conditions: "",
         }}
@@ -25,7 +42,6 @@ const FormValidation = (props) => {
           Email: Yup.string()
             .email("Invalid email")
             .required("Email can not be empty"),
-          VisitTime: Yup.string(),
           Doctor: Yup.string()
             .min(3, "Too Short!")
             .max(20, "Too Long!")
@@ -35,35 +51,30 @@ const FormValidation = (props) => {
             .max(20, "Too Long!")
             .required("This input can not be empty"),
         })}
-        onSubmit={(values, { resetForm, setSubmitting }) => {
+        onSubmit={(values) => {
+          handleClick();
           axios
             .post("https://desolate-hamlet-85078.herokuapp.com/users", {
               Name: values.Name,
               Email: values.Email,
-              VisitTime: values.VisitTime,
+              VisitTime:
+                moment(value1.current.value, ["HH.mm"]).format("hh:mm") +
+                "-" +
+                moment(value2.current.value, ["HH.mm"]).format("hh:mm a"),
               Doctor: values.Doctor,
               Conditions: values.Conditions,
               Date: Date.now(),
             })
             .then((res) => dispatch(changeData(res.data)))
             .catch((err) => console.log(err));
+
           setTimeout(() => {
-            resetForm();
             props.setModalOpenAddFunc();
-          }, 500);
+          }, 4000);
         }}
       >
-        {({
-          values,
-          errors,
-          touched,
-          handleSubmit,
-          handleReset,
-          handleChange,
-          dirty,
-          isSubmitting,
-        }) => (
-          <form onSubmit={handleSubmit}>
+        {({ values, errors, touched, handleChange }) => (
+          <Form>
             <label htmlFor="Name"> Name and surname</label>
             <input
               type="text"
@@ -86,6 +97,9 @@ const FormValidation = (props) => {
               value={values.Email}
               onChange={handleChange}
             />
+            {errors.Email && touched.Email ? (
+              <div className="input-errors">{errors.Email}</div>
+            ) : null}
 
             <label htmlFor="Doctor"> Doctor</label>
             <input
@@ -96,16 +110,13 @@ const FormValidation = (props) => {
               value={values.Doctor}
               onChange={handleChange}
             />
+            {errors.Doctor && touched.Doctor ? (
+              <div className="input-errors">{errors.Doctor}</div>
+            ) : null}
 
-            <label htmlFor="VisitTime"> VisitTime</label>
-            <input
-              type="text"
-              name="VisitTime"
-              placeholder="12:00-12:45pm"
-              id="VisitTime"
-              value={values.VisitTime}
-              onChange={handleChange}
-            />
+            <label htmlFor="VisitTime"> Visit Time</label>
+
+            <TimePicker StartVisitTime={value1} EndVisitTime={value2} />
 
             <label htmlFor="Conditions"> Conditions</label>
             <input
@@ -116,14 +127,25 @@ const FormValidation = (props) => {
               value={values.Conditions}
               onChange={handleChange}
             />
+            {errors.Conditions && touched.Conditions ? (
+              <div className="input-errors">{errors.Conditions}</div>
+            ) : null}
 
             <div className="modal-buttons">
               <button onClick={props.setModalOpenAddFunc}>Cancel</button>
-              <button type="submit" disabled={!dirty || isSubmitting}>
-                Add
-              </button>
+              <button type="submit">Add</button>
+              <Snackbar
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                open={open}
+                autoHideDuration={3000}
+                onClose={handleClose}
+                message="Patient's informastion was added"
+              />
             </div>
-          </form>
+          </Form>
         )}
       </Formik>
     </div>

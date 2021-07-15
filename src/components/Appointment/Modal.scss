@@ -20,6 +20,9 @@
         margin-right: 5px;
       }
     }
+    .MuiSnackbarContent-root {
+      background-color: blue;
+    }
   }
   form {
     @include flex(inherit, center, column);

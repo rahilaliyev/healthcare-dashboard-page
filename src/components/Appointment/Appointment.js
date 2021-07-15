@@ -57,7 +57,7 @@ const Appointment = () => {
           </thead>
           <tbody>
             {tableInfoData.map((row) => (
-              <tr>
+              <tr key={row.id}>
                 <td>
                   <img src={row.Image} alt="tablePhoto" /> {row.Name}
                 </td>

@@ -59,34 +59,46 @@ const ModalButtonTableDelete = (props) => {
         }}
       >
         <div className="modal">
-          <div className="modal-buttons">
-            <button onClick={setModalTableFuncEdit}>Cancel</button>
-            <button>Save</button>
-          </div>
           <form>
-            <label>
-              Name: <input type="text" name="name" />
-            </label>
-
-            <label>
-              Email: <input type="email" name="email" />
-            </label>
-
-            <label>
-              Date: <input type="date" name="date" />
-            </label>
-
-            <label>
-              Doctor: <input type="text" name="doctor" />
-            </label>
-
-            <label>
-              Visit Time: <input type="text" name="visitTime" />
-            </label>
-
-            <label>
-              Conditions: <input type="text" name="Conditions" />
-            </label>
+            <label htmlFor="Name"> Name and surname</label>
+            <input
+              type="text"
+              name="Name"
+              id="Name"
+              placeholder=" For example Lesli Alexander"
+            />
+            <label htmlFor="Email"> Email</label>
+            <input
+              type="email"
+              name="Email"
+              id="Email"
+              placeholder="lesli.alexander@mail.com"
+            />
+            <label htmlFor="Doctor"> Doctor</label>
+            <input
+              type="text"
+              name="Doctor"
+              id="Doctor"
+              placeholder="Dr. Esther Howard"
+            />
+            <label htmlFor="VisitTime"> Visit Time</label>
+            <input
+              type="text"
+              name="VisitTime"
+              placeholder="12:00-12:45pm"
+              id="VisitTime"
+            />
+            <label htmlFor="Conditions"> Conditions</label>
+            <input
+              type="text"
+              name="Conditions"
+              placeholder="Depression"
+              id="Conditions"
+            />
+            <div className="modal-buttons">
+              <button onClick={setModalTableFuncEdit}>Cancel</button>
+              <button>Save</button>
+            </div>
           </form>
         </div>
       </Modal>
