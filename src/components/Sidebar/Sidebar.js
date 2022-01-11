@@ -34,6 +34,7 @@ const Sidebar = () => {
       ),
 
       list: "Dashboard",
+      path: "/dashboard",
     },
     {
       image: (key) => (
@@ -52,6 +53,7 @@ const Sidebar = () => {
       ),
 
       list: "Appointments",
+      path: "/appointments",
     },
     {
       image: (key) => (
@@ -139,6 +141,7 @@ const Sidebar = () => {
       list: "Help",
     },
   ];
+  console.log(SidebarLists[0].path);
   return (
     <header className="Sidebar">
       <div className="logo">
@@ -158,7 +161,7 @@ const Sidebar = () => {
             <li onClick={() => changeClickList(key)} key={key}>
               <NavLink
                 onClick={hideSidebar}
-                to={key === 0 ? "/dashboard" : "/appointments"}
+                to={"item.path"}
                 style={key === keylist.key ? { color: "#336CFB" } : {}}
               >
                 {item.image(key)} <span>{item.list} </span>
