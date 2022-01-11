@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/healthcare-dashboard-page/static/css/main.250b5522.chunk.css",
-    "main.js": "/healthcare-dashboard-page/static/js/main.c4b9f4b5.chunk.js",
-    "main.js.map": "/healthcare-dashboard-page/static/js/main.c4b9f4b5.chunk.js.map",
-    "runtime-main.js": "/healthcare-dashboard-page/static/js/runtime-main.b79e089e.js",
-    "runtime-main.js.map": "/healthcare-dashboard-page/static/js/runtime-main.b79e089e.js.map",
-    "static/js/2.c50ffaf2.chunk.js": "/healthcare-dashboard-page/static/js/2.c50ffaf2.chunk.js",
-    "static/js/2.c50ffaf2.chunk.js.map": "/healthcare-dashboard-page/static/js/2.c50ffaf2.chunk.js.map",
+    "main.js": "/healthcare-dashboard-page/static/js/main.a660abdf.chunk.js",
+    "main.js.map": "/healthcare-dashboard-page/static/js/main.a660abdf.chunk.js.map",
+    "runtime-main.js": "/healthcare-dashboard-page/static/js/runtime-main.b82853ba.js",
+    "runtime-main.js.map": "/healthcare-dashboard-page/static/js/runtime-main.b82853ba.js.map",
+    "static/js/2.a26707d9.chunk.js": "/healthcare-dashboard-page/static/js/2.a26707d9.chunk.js",
+    "static/js/2.a26707d9.chunk.js.map": "/healthcare-dashboard-page/static/js/2.a26707d9.chunk.js.map",
     "static/css/3.0d9aabfd.chunk.css": "/healthcare-dashboard-page/static/css/3.0d9aabfd.chunk.css",
-    "static/js/3.66409892.chunk.js": "/healthcare-dashboard-page/static/js/3.66409892.chunk.js",
-    "static/js/3.66409892.chunk.js.map": "/healthcare-dashboard-page/static/js/3.66409892.chunk.js.map",
+    "static/js/3.ed5df8c2.chunk.js": "/healthcare-dashboard-page/static/js/3.ed5df8c2.chunk.js",
+    "static/js/3.ed5df8c2.chunk.js.map": "/healthcare-dashboard-page/static/js/3.ed5df8c2.chunk.js.map",
     "static/css/4.ca4160c3.chunk.css": "/healthcare-dashboard-page/static/css/4.ca4160c3.chunk.css",
     "static/js/4.83a0f392.chunk.js": "/healthcare-dashboard-page/static/js/4.83a0f392.chunk.js",
     "static/js/4.83a0f392.chunk.js.map": "/healthcare-dashboard-page/static/js/4.83a0f392.chunk.js.map",
@@ -19,13 +19,13 @@
     "static/css/3.0d9aabfd.chunk.css.map": "/healthcare-dashboard-page/static/css/3.0d9aabfd.chunk.css.map",
     "static/css/4.ca4160c3.chunk.css.map": "/healthcare-dashboard-page/static/css/4.ca4160c3.chunk.css.map",
     "static/css/main.250b5522.chunk.css.map": "/healthcare-dashboard-page/static/css/main.250b5522.chunk.css.map",
-    "static/js/2.c50ffaf2.chunk.js.LICENSE.txt": "/healthcare-dashboard-page/static/js/2.c50ffaf2.chunk.js.LICENSE.txt",
+    "static/js/2.a26707d9.chunk.js.LICENSE.txt": "/healthcare-dashboard-page/static/js/2.a26707d9.chunk.js.LICENSE.txt",
     "static/js/5.155db60b.chunk.js.LICENSE.txt": "/healthcare-dashboard-page/static/js/5.155db60b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b79e089e.js",
-    "static/js/2.c50ffaf2.chunk.js",
+    "static/js/runtime-main.b82853ba.js",
+    "static/js/2.a26707d9.chunk.js",
     "static/css/main.250b5522.chunk.css",
-    "static/js/main.c4b9f4b5.chunk.js"
+    "static/js/main.a660abdf.chunk.js"
   ]
 }
